@@ -377,17 +377,6 @@ Wall time from first submission to last completion ≈ 11.4 s.
 # Version 2 — Long Polling, Versions, and Experiments
 ![ImageLab UI Version 2](https://github.com/user-attachments/assets/d1fcf3d4-63ff-46ac-892c-59b9fd12dc6e)
 
-## Assessment 1 baseline
-
-Version 1 (the Assessment 1 deliverable) is tagged **`assessment1-baseline`**
-(commit `7f8c56d`, "Fix Week 4 Progress Report link in README"). Everything
-after that tag is Version 2 work:
-
-```sh
-git show --stat assessment1-baseline   # last Version 1 commit
-git log --oneline assessment1-baseline..HEAD   # Version 2 commits
-```
-
 ## What Version 2 adds
 
 - **Durable job versions** — `jobs.version` (migration `000004`) is a monotonic
