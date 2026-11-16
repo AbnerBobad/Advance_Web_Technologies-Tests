@@ -15,9 +15,12 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
+	"context"
 	"encoding/csv"
 	"encoding/json"
+	"errors"
 	"flag"
 	"fmt"
 	"io"
@@ -26,6 +29,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -125,6 +129,19 @@ type result struct {
 	clientCompletedAt  string
 	observationStartAt string
 	notes              string
+
+	// SSE-specific counters (MEAS-05). A stream GET is one HTTP request that
+	// stays open; job events are the named frames inside it; heartbeats are
+	// SSE comment frames and are not job updates.
+	sseStreamGets     int
+	sseJobEvents      int
+	sseHeartbeats     int
+	firstEventMS      float64
+	streamSeconds     float64
+	peakActiveStreams int
+	sseDBReads        int
+	versionsReceived  int
+	versionGaps       int
 }
 
 func main() {
@@ -133,7 +150,7 @@ func main() {
 	flag.StringVar(&cfg.image, "image", "", "Path to the test image to upload")
 	flag.StringVar(&cfg.condition, "condition", "B", "Condition id (A, B, C1, C2, C3)")
 	flag.StringVar(&cfg.label, "label", "", "Human label for the condition")
-	flag.StringVar(&cfg.mode, "mode", "short", "Observation mode: short or long")
+	flag.StringVar(&cfg.mode, "mode", "short", "Observation mode: short, long, or sse")
 	flag.IntVar(&cfg.reps, "reps", 3, "Repetitions for this condition/mode")
 	flag.IntVar(&cfg.latencyMS, "latency", 0, "Additional round-trip latency in ms (split before/after each observation request)")
 	flag.IntVar(&cfg.quietDelayMS, "quiet-delay", 0, "Recorded quiet delay (ms), for the CSV")
@@ -151,8 +168,8 @@ func main() {
 		fmt.Fprintln(os.Stderr, "error: -image is required")
 		os.Exit(2)
 	}
-	if cfg.mode != "short" && cfg.mode != "long" {
-		fmt.Fprintln(os.Stderr, "error: -mode must be short or long")
+	if cfg.mode != "short" && cfg.mode != "long" && cfg.mode != "sse" {
+		fmt.Fprintln(os.Stderr, "error: -mode must be short, long, or sse")
 		os.Exit(2)
 	}
 	if err := os.MkdirAll(cfg.rawDir, 0o755); err != nil {
@@ -163,7 +180,13 @@ func main() {
 	client := &http.Client{Timeout: time.Duration(cfg.requestTimeoutMS) * time.Millisecond}
 
 	for rep := 1; rep <= cfg.reps; rep++ {
-		res, err := runOnce(client, cfg, rep)
+		var res *result
+		var err error
+		if cfg.mode == "sse" {
+			res, err = runOnceSSE(client, cfg, rep)
+		} else {
+			res, err = runOnce(client, cfg, rep)
+		}
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "run %s/%s rep %d failed: %v\n", cfg.condition, cfg.mode, rep, err)
 			continue
@@ -172,8 +195,8 @@ func main() {
 			fmt.Fprintln(os.Stderr, "error writing CSV:", err)
 			os.Exit(1)
 		}
-		fmt.Printf("run %-12s mode=%-5s rep=%d detection=%7.1fms requests=%d coverage=%.2f\n",
-			res.runID, res.mode, rep, res.detectionMS, res.totalRequests, res.versionCoverage)
+		fmt.Printf("run %-12s mode=%-5s rep=%d detection=%7.1fms gets=%d events=%d coverage=%.2f\n",
+			res.runID, res.mode, rep, res.detectionMS, observationGets(res), res.sseJobEvents, res.versionCoverage)
 	}
 }
 
@@ -378,6 +401,254 @@ func runOnce(client *http.Client, cfg config, rep int) (*result, error) {
 	return res, nil
 }
 
+// observationGets reports the observation HTTP requests started by a run.
+// For SSE that is the stream GET, not the events carried inside it (MEAS-10).
+func observationGets(res *result) int {
+	if res.mode == "sse" {
+		return res.sseStreamGets
+	}
+	return res.totalRequests
+}
+
+// runOnceSSE performs one measured SSE observation. It opens a single stream
+// GET, reads the named event frames until the terminal snapshot, and records
+// stream activity separately from job updates and heartbeats.
+func runOnceSSE(client *http.Client, cfg config, rep int) (*result, error) {
+	runID := fmt.Sprintf("%s-%s-%d-%s", cfg.condition, cfg.mode, rep, time.Now().Format("150405.000"))
+
+	rawPath := filepath.Join(cfg.rawDir, runID+".jsonl")
+	raw, err := os.Create(rawPath)
+	if err != nil {
+		return nil, err
+	}
+	defer raw.Close()
+
+	logEvent := func(ev event) {
+		ev.Run = runID
+		ev.At = time.Now().UTC().Format(time.RFC3339Nano)
+		b, _ := json.Marshal(ev)
+		raw.Write(b)
+		raw.Write([]byte("\n"))
+	}
+
+	// --- upload (the only POST; it is never counted as observation) ---
+	uploadStart := time.Now()
+	accepted, err := upload(client, cfg.base, cfg.image)
+	ackMS := float64(time.Since(uploadStart).Microseconds()) / 1000.0
+	if err != nil {
+		logEvent(event{Event: "upload_error", Note: err.Error()})
+		return nil, err
+	}
+	logEvent(event{Event: "ack", HTTP: 202, Version: accepted.Version, Note: accepted.JobID})
+
+	res := &result{
+		runID:              runID,
+		jobID:              accepted.JobID,
+		image:              filepath.Base(cfg.image),
+		condition:          cfg.condition,
+		label:              cfg.label,
+		mode:               cfg.mode,
+		rep:                rep,
+		latencySetting:     "none",
+		quietDelayMS:       cfg.quietDelayMS,
+		simulateDurMS:      cfg.simulateDurMS,
+		simulateIntMS:      cfg.simulateIntMS,
+		uploadAckMS:        ackMS,
+		status:             accepted.Status,
+		observationStartAt: time.Now().UTC().Format(time.RFC3339Nano),
+		notes:              runNotes(cfg),
+	}
+
+	statusURL := cfg.base + accepted.StatusURL
+	eventsURL := statusURL + "/events"
+
+	// A stream has no total timeout: it is meant to stay open for the whole
+	// job. Cancellation is explicit once the terminal frame arrives.
+	streamClient := &http.Client{}
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, eventsURL, nil)
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("Accept", "text/event-stream")
+	req.Header.Set("Cache-Control", "no-cache")
+
+	streamStart := time.Now()
+	logEvent(event{Event: "sse_connect", Seq: 1, Mode: cfg.mode, Note: eventsURL})
+	resp, err := streamClient.Do(req)
+	if err != nil {
+		logEvent(event{Event: "error", Seq: 1, Note: err.Error()})
+		res.errors++
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	res.sseStreamGets++
+	res.totalRequests = 1
+	res.peakActiveStreams = 1
+	if resp.StatusCode != http.StatusOK {
+		body, _ := io.ReadAll(resp.Body)
+		logEvent(event{Event: "response", HTTP: resp.StatusCode, Mode: cfg.mode})
+		res.errors++
+		return nil, fmt.Errorf("SSE stream returned HTTP %d: %s", resp.StatusCode, string(body))
+	}
+	contentType := resp.Header.Get("Content-Type")
+	logEvent(event{Event: "sse_open", HTTP: resp.StatusCode, Mode: cfg.mode, Note: contentType})
+	if !strings.HasPrefix(contentType, "text/event-stream") {
+		res.errors++
+		return nil, fmt.Errorf("SSE stream had Content-Type %q", contentType)
+	}
+
+	seen := map[int]bool{}
+	versionFirstSeen := -1
+	lastVersion := -1
+	var terminal snapshot
+	terminalSeen := false
+
+	scanner := bufio.NewScanner(resp.Body)
+	scanner.Buffer(make([]byte, 0, 64*1024), 1024*1024)
+
+	var eventName string
+	var dataLines []string
+
+	dispatch := func() bool {
+		if len(dataLines) == 0 {
+			eventName = ""
+			return false
+		}
+		payload := strings.Join(dataLines, "\n")
+		name := eventName
+		eventName = ""
+		dataLines = nil
+
+		if name != "job-update" {
+			logEvent(event{Event: "sse_unknown_event", Mode: cfg.mode, Note: name})
+			return false
+		}
+
+		var s snapshot
+		if err := json.Unmarshal([]byte(payload), &s); err != nil {
+			res.errors++
+			logEvent(event{Event: "sse_parse_error", Mode: cfg.mode, Note: err.Error()})
+			return false
+		}
+
+		res.sseJobEvents++
+		if res.firstEventMS == 0 {
+			res.firstEventMS = float64(time.Since(streamStart).Microseconds()) / 1000.0
+			res.promptGetMS = res.firstEventMS
+		}
+		if versionFirstSeen == -1 {
+			versionFirstSeen = s.Version
+		}
+		seen[s.Version] = true
+		lastVersion = s.Version
+		logEvent(event{Event: "sse_job_update", Version: s.Version, Status: s.Status, Mode: cfg.mode})
+
+		applySnapshot(res, &s)
+		terminal = s
+		if s.Status == "completed" || s.Status == "failed" {
+			res.clientCompletedAt = time.Now().UTC().Format(time.RFC3339Nano)
+			return true
+		}
+		return false
+	}
+
+	for scanner.Scan() {
+		line := scanner.Text()
+		switch {
+		case line == "":
+			if dispatch() {
+				terminalSeen = true
+			}
+		case strings.HasPrefix(line, ":"):
+			res.sseHeartbeats++
+			logEvent(event{Event: "sse_heartbeat", Mode: cfg.mode})
+		case strings.HasPrefix(line, "event:"):
+			eventName = strings.TrimSpace(strings.TrimPrefix(line, "event:"))
+		case strings.HasPrefix(line, "data:"):
+			value := strings.TrimPrefix(line, "data:")
+			value = strings.TrimPrefix(value, " ")
+			dataLines = append(dataLines, value)
+		}
+		if terminalSeen {
+			break
+		}
+	}
+	res.streamSeconds = time.Since(streamStart).Seconds()
+
+	if !terminalSeen {
+		if err := scanner.Err(); err != nil && !errors.Is(err, context.Canceled) {
+			res.errors++
+			logEvent(event{Event: "sse_scan_error", Mode: cfg.mode, Note: err.Error()})
+		}
+		logEvent(event{Event: "sse_closed", Mode: cfg.mode, Version: lastVersion})
+	}
+
+	// The terminal event was received; stop reading and close the stream.
+	cancel()
+
+	finalize(res, cfg, terminal, seen, versionFirstSeen, logEvent)
+
+	// The server logs its own stream summary when the handler exits. Read it
+	// so the run records authoritative observation database reads and peak
+	// active handlers rather than inferring them from the client.
+	if cfg.serverLog != "" {
+		for attempt := 0; attempt < 20; attempt++ {
+			if stats, ok := readSSEStreamStats(cfg.serverLog, res.jobID); ok {
+				res.sseDBReads = stats.dbReads
+				res.dbReads = stats.dbReads
+				if stats.peak > res.peakActiveStreams {
+					res.peakActiveStreams = stats.peak
+				}
+				break
+			}
+			time.Sleep(25 * time.Millisecond)
+		}
+	}
+
+	return res, nil
+}
+
+// sseStreamStats is the server's own account of one stream: how many database
+// reads it performed and the peak number of concurrently active handlers.
+type sseStreamStats struct {
+	dbReads int
+	peak    int
+}
+
+var (
+	sseDBReadsRe = regexp.MustCompile(`db_reads=(\d+)`)
+	ssePeakRe    = regexp.MustCompile(`peak_active_streams=(\d+)`)
+)
+
+// sseStreamStats scans the server log for the last "sse stream ended" line for
+// this job. Joining by job id keeps interleaved runs apart.
+func readSSEStreamStats(logPath, jobID string) (sseStreamStats, bool) {
+	data, err := os.ReadFile(logPath)
+	if err != nil {
+		return sseStreamStats{}, false
+	}
+	var found sseStreamStats
+	ok := false
+	for _, line := range bytes.Split(data, []byte("\n")) {
+		if !bytes.Contains(line, []byte("sse stream ended")) || !bytes.Contains(line, []byte(jobID)) {
+			continue
+		}
+		db := sseDBReadsRe.FindSubmatch(line)
+		peak := ssePeakRe.FindSubmatch(line)
+		if db == nil || peak == nil {
+			continue
+		}
+		found.dbReads, _ = strconv.Atoi(string(db[1]))
+		found.peak, _ = strconv.Atoi(string(peak[1]))
+		ok = true
+	}
+	return found, ok
+}
+
 // applySnapshot copies progress fields from a snapshot onto the result.
 func applySnapshot(res *result, s *snapshot) {
 	res.status = s.Status
@@ -400,19 +671,33 @@ func finalize(res *result, cfg config, terminal snapshot, seen map[int]bool, ver
 			distinct++
 		}
 	}
+	res.versionsReceived = distinct
 	if distinct > 0 {
 		res.distinctNewSeen = distinct - 1
 	}
 	// Version coverage compares the new versions received with the versions
 	// committed after the baseline through the terminal version, so gaps lower
-	// the ratio (Section 6).
+	// the ratio (Section 6). A gap is expected for SSE when notifications are
+	// coalesced and is not by itself data loss (MEAS-05).
 	if span := terminal.Version - res.baselineVersion; span > 0 {
 		res.versionCoverage = float64(res.distinctNewSeen) / float64(span)
+		res.versionGaps = span - res.distinctNewSeen
+		if res.versionGaps < 0 {
+			res.versionGaps = 0
+		}
 	} else {
 		res.versionCoverage = 1
 	}
 
-	res.clientCompletedAt = logEventReturningNow(logEvent, res, terminal)
+	// SSE records the terminal receipt time in the event loop, before any
+	// post-processing, because that timestamp is the detection measurement.
+	// Polling records it here, after the loop ends. Either way the join to the
+	// server's post-commit log time happens below.
+	if res.clientCompletedAt == "" {
+		res.clientCompletedAt = logEventReturningNow(logEvent, res, terminal)
+	} else {
+		logEvent(event{Event: "terminal", HTTP: 200, Version: terminal.Version, Status: terminal.Status})
+	}
 
 	// processing duration and job duration come from server timestamps.
 	if terminal.StartedAt != nil {
@@ -529,9 +814,12 @@ func terminalCommitTime(logPath, jobID, terminalStatus string) (time.Time, bool)
 // run, so the methods section can state exactly how each mode was driven.
 func runNotes(cfg config) string {
 	var parts []string
-	if cfg.mode == "short" {
+	switch cfg.mode {
+	case "short":
 		parts = append(parts, fmt.Sprintf("short: %dms delay after each response, no overlapping requests", cfg.shortIntervalMS))
-	} else {
+	case "sse":
+		parts = append(parts, "sse: one stream GET; server sends the initial snapshot then one job-update per committed version; no polling and no id replay")
+	default:
 		parts = append(parts, fmt.Sprintf("long: next request immediately after each active 200 or 204, wait=%ds", cfg.longWaitSeconds))
 	}
 	if cfg.quietDelayMS > 0 {
@@ -568,16 +856,21 @@ func appendCSV(path string, res *result) error {
 	w := csv.NewWriter(f)
 	defer w.Flush()
 
+	// The first block follows the column list recommended by the Version 3
+	// brief; the second keeps the Version 2 supporting detail so existing
+	// analysis can still read a run.
 	header := []string{
-		"run_id", "condition", "mode", "repetition", "job_id", "image", "latency_setting",
-		"baseline_version", "terminal_version", "requests_started",
-		"initial_200", "newer_200", "unchanged_200", "no_change_204",
-		"retrieval_errors", "cancellations", "distinct_new_versions_seen",
-		"processing_ms", "detection_ms", "notes",
-		"observation_db_reads", "version_coverage", "job_duration_ms", "upload_ack_ms",
-		"prompt_get_ms", "variants_completed", "status",
-		"condition_label", "quiet_delay_ms", "simulate_duration_ms", "simulate_interval_ms",
-		"client_latency_ms", "observation_started_at", "server_completed_at", "client_completed_at",
+		"run_id", "condition", "condition_label", "mode", "repetition", "job_id", "image",
+		"baseline_version", "terminal_version", "observation_gets", "sse_stream_gets",
+		"job_events_received", "heartbeats", "versions_received", "version_gaps",
+		"processing_ms", "detection_ms", "observation_db_reads", "stream_seconds",
+		"peak_active_streams", "notes",
+		"requests_started", "initial_200", "newer_200", "unchanged_200", "no_change_204",
+		"retrieval_errors", "cancellations", "distinct_new_versions_seen", "version_coverage",
+		"job_duration_ms", "upload_ack_ms", "first_event_ms", "prompt_get_ms",
+		"variants_completed", "status", "quiet_delay_ms", "simulate_duration_ms",
+		"simulate_interval_ms", "client_latency_ms", "latency_setting",
+		"observation_started_at", "server_completed_at", "client_completed_at",
 	}
 	if needHeader {
 		if err := w.Write(header); err != nil {
@@ -585,16 +878,29 @@ func appendCSV(path string, res *result) error {
 		}
 	}
 
+	dbReads := res.dbReads
+	if res.mode == "sse" {
+		dbReads = res.sseDBReads
+	}
 	row := []string{
-		res.runID, res.condition, res.mode, fmt.Sprintf("%d", res.rep), res.jobID, res.image, res.latencySetting,
-		fmt.Sprintf("%d", res.baselineVersion), fmt.Sprintf("%d", res.terminalVersion), fmt.Sprintf("%d", res.totalRequests),
-		fmt.Sprintf("%d", res.initial200), fmt.Sprintf("%d", res.newer200), fmt.Sprintf("%d", res.unchanged200),
-		fmt.Sprintf("%d", res.noContent204), fmt.Sprintf("%d", res.errors), fmt.Sprintf("%d", res.cancellations),
-		fmt.Sprintf("%d", res.distinctNewSeen), fmt.Sprintf("%.1f", res.processingMS), fmt.Sprintf("%.1f", res.detectionMS), res.notes,
-		fmt.Sprintf("%d", res.dbReads), fmt.Sprintf("%.4f", res.versionCoverage), fmt.Sprintf("%.1f", res.jobDurationMS),
-		fmt.Sprintf("%.1f", res.uploadAckMS), fmt.Sprintf("%.2f", res.promptGetMS), fmt.Sprintf("%d", res.variantsCompleted), res.status,
-		res.label, fmt.Sprintf("%d", res.quietDelayMS), fmt.Sprintf("%d", res.simulateDurMS), fmt.Sprintf("%d", res.simulateIntMS),
-		fmt.Sprintf("%d", res.latencyMS), res.observationStartAt, res.serverCompletedAt, res.clientCompletedAt,
+		res.runID, res.condition, res.label, res.mode, fmt.Sprintf("%d", res.rep), res.jobID, res.image,
+		fmt.Sprintf("%d", res.baselineVersion), fmt.Sprintf("%d", res.terminalVersion),
+		fmt.Sprintf("%d", observationGets(res)), fmt.Sprintf("%d", res.sseStreamGets),
+		fmt.Sprintf("%d", res.sseJobEvents), fmt.Sprintf("%d", res.sseHeartbeats),
+		fmt.Sprintf("%d", res.versionsReceived), fmt.Sprintf("%d", res.versionGaps),
+		fmt.Sprintf("%.1f", res.processingMS), fmt.Sprintf("%.1f", res.detectionMS),
+		fmt.Sprintf("%d", dbReads), fmt.Sprintf("%.3f", res.streamSeconds),
+		fmt.Sprintf("%d", res.peakActiveStreams), res.notes,
+		fmt.Sprintf("%d", res.totalRequests), fmt.Sprintf("%d", res.initial200),
+		fmt.Sprintf("%d", res.newer200), fmt.Sprintf("%d", res.unchanged200),
+		fmt.Sprintf("%d", res.noContent204), fmt.Sprintf("%d", res.errors),
+		fmt.Sprintf("%d", res.cancellations), fmt.Sprintf("%d", res.distinctNewSeen),
+		fmt.Sprintf("%.4f", res.versionCoverage), fmt.Sprintf("%.1f", res.jobDurationMS),
+		fmt.Sprintf("%.1f", res.uploadAckMS), fmt.Sprintf("%.2f", res.firstEventMS),
+		fmt.Sprintf("%.2f", res.promptGetMS), fmt.Sprintf("%d", res.variantsCompleted), res.status,
+		fmt.Sprintf("%d", res.quietDelayMS), fmt.Sprintf("%d", res.simulateDurMS),
+		fmt.Sprintf("%d", res.simulateIntMS), fmt.Sprintf("%d", res.latencyMS), res.latencySetting,
+		res.observationStartAt, res.serverCompletedAt, res.clientCompletedAt,
 	}
 	return w.Write(row)
 }

@@ -114,3 +114,16 @@ measure:
 build/api:
 	@echo 'Building cmd/api...'
 	go build -ldflags="-s" -o=./bin/api ./cmd/api
+# ==================================================================================== #
+# ASSESSMENT 3 — SSE
+# ==================================================================================== #
+
+## experiment-v3: run the 18-run SSE versus long-polling experiment
+.PHONY: experiment-v3
+experiment-v3:
+	./scripts/experiment-v3.sh
+
+## sse-smoke: run the SSE lifecycle acceptance checks (server must be running)
+.PHONY: sse-smoke
+sse-smoke:
+	./scripts/sse-smoke.sh
