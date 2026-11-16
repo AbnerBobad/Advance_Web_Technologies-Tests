@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"errors"
 	"net/http"
 
@@ -48,11 +49,27 @@ func (app *application) getJobHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// writeJobSnapshot writes the shared job representation used by both
-// observation modes: the existing fields plus version, and the variant
+// writeJobSnapshot writes the shared job representation used by every
+// observation mode: the existing fields plus version, and the variant
 // metadata once the job is completed. Observation responses are marked
 // Cache-Control: no-store so no cache serves a stale snapshot (API-03).
 func (app *application) writeJobSnapshot(w http.ResponseWriter, r *http.Request, job *data.Job) error {
+	response, err := app.jobSnapshot(r.Context(), job)
+	if err != nil {
+		return err
+	}
+
+	headers := make(http.Header)
+	headers.Set("Cache-Control", "no-store")
+
+	return app.writeJSON(w, http.StatusOK, response, headers)
+}
+
+// jobSnapshot builds the complete public representation of one job. It is the
+// single source of truth for both JSON responses and SSE payloads, so a
+// snapshot delivered over a stream is identical to one fetched with a prompt
+// GET (JOB-01, JOB-02).
+func (app *application) jobSnapshot(ctx context.Context, job *data.Job) (envelope, error) {
 	response := envelope{
 		"id":                 job.PublicID,
 		"image_id":           job.ImageID,
@@ -79,17 +96,14 @@ func (app *application) writeJobSnapshot(w http.ResponseWriter, r *http.Request,
 	// Variants exist only at completion; the worker records them before the
 	// job is marked completed, so a completed job always has all three.
 	if job.Status == "completed" {
-		variants, err := app.models.Variants.GetByImageID(r.Context(), job.ImageID)
+		variants, err := app.models.Variants.GetByImageID(ctx, job.ImageID)
 		if err != nil {
-			return err
+			return nil, err
 		}
 		response["variants"] = jobVariants(variants)
 	}
 
-	headers := make(http.Header)
-	headers.Set("Cache-Control", "no-store")
-
-	return app.writeJSON(w, http.StatusOK, response, headers)
+	return response, nil
 }
 
 // noContentResponse answers a holding deadline that expired with no newer

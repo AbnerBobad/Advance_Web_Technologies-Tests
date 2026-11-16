@@ -10,6 +10,7 @@ import (
 	"log/slog"
 	"os"
 	"sync"
+	"sync/atomic"
 	"time"
 
 	"imagelab/internal/data"
@@ -70,6 +71,11 @@ type application struct {
 	wg          sync.WaitGroup
 	// workerCancel stops the background image worker during shutdown.
 	workerCancel context.CancelFunc
+	// sseActive counts currently open SSE streams; ssePeak records the
+	// high-water mark so multi-tab demonstrations can show every observer
+	// being notified (SYNC-02). Both are only used by the stream handler.
+	sseActive atomic.Int64
+	ssePeak   atomic.Int64
 }
 
 func main() {

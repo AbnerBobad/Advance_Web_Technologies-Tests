@@ -11,6 +11,7 @@ func (app *application) routes() http.Handler {
 	mux.HandleFunc("GET /v1/healthcheck", app.healthcheckHandler)
 	mux.HandleFunc("POST /v1/images", app.createImageHandler)
 	mux.HandleFunc("GET /v1/jobs/{id}", app.getJobHandler)
+	mux.HandleFunc("GET /v1/jobs/{id}/events", app.jobEventsHandler)
 	mux.HandleFunc("GET /v1/images/{image_id}/variants/{name}", app.getImageVariantHandler)
 	mux.Handle("/", http.FileServer(http.Dir(app.config.frontendDir)))
 	return mux
