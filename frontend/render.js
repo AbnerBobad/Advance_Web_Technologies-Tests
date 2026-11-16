@@ -142,6 +142,37 @@ function buildPollPanel(job, mode) {
     return panel;
   }
 
+  if (mode === "reconnecting") {
+    // A dropped SSE stream is an observation problem only: the job may
+    // still be running and the browser will reconnect on its own (UI-04).
+    panel.classList.add("poll-panel--error");
+    const row = el("div", "poll-row");
+    row.appendChild(el("span", "poll-icon poll-icon--warn", "!"));
+    row.appendChild(el("span", "poll-title", "Reconnecting to the job stream"));
+    panel.appendChild(row);
+    panel.appendChild(
+      el("p", "poll-sub", "Observation paused. The job continues on the server; your last known status is shown below.")
+    );
+    return panel;
+  }
+
+  if (mode === "stopped") {
+    panel.classList.add("poll-panel--stopped");
+    const row = el("div", "poll-row");
+    row.appendChild(el("span", "poll-icon", "\u2013"));
+    row.appendChild(el("span", "poll-title", "Observation stopped"));
+    panel.appendChild(row);
+    panel.appendChild(
+      el("p", "poll-sub", "The job continues on the server. Resume to observe its current state.")
+    );
+    const button = el("button", "button button-outline poll-retry");
+    button.type = "button";
+    button.id = "resumeObservationButton";
+    button.textContent = "Resume observation";
+    panel.appendChild(button);
+    return panel;
+  }
+
   if (job.status === "completed") {
     panel.classList.add("poll-panel--done");
     const row = el("div", "poll-row");
@@ -165,15 +196,22 @@ function buildPollPanel(job, mode) {
   // queued or processing: an automatic observation loop is active. Show the
   // selected mode and the last observed version (UI-01).
   const isLong = job.mode === "long";
+  const isSse = job.mode === "sse";
+  const title = isSse
+    ? "Listening for job updates"
+    : isLong
+      ? "Waiting for the next change"
+      : "Checking status automatically";
+  const sub = isSse
+    ? "Server-Sent Events (one open response)"
+    : isLong
+      ? "Long polling (holds up to 20 s)"
+      : "Short polling every 1 second";
   const row = el("div", "poll-row");
   row.appendChild(el("span", "poll-spinner"));
-  row.appendChild(
-    el("span", "poll-title", isLong ? "Waiting for the next change" : "Checking status automatically")
-  );
+  row.appendChild(el("span", "poll-title", title));
   panel.appendChild(row);
-  panel.appendChild(
-    el("p", "poll-sub", isLong ? "Long polling (holds up to 20 s)" : "Short polling every 1 second")
-  );
+  panel.appendChild(el("p", "poll-sub", sub));
 
   // Progress (PROG-01..03). Real progress is the stage plus the number of
   // variant files actually stored. The simulated phase (EXP-02) is shown
@@ -197,10 +235,29 @@ function buildPollPanel(job, mode) {
   if (job.version != null) {
     panel.appendChild(el("p", "poll-count", "Version " + job.version));
   }
-  if (job.__pollCount) {
+  if (isSse) {
+    if (job.__pollCount) {
+      const label =
+        job.__pollCount + " job-update event" + (job.__pollCount === 1 ? "" : "s") + " so far";
+      panel.appendChild(el("p", "poll-count", label));
+    }
+    if (job.__streamGets) {
+      const label =
+        job.__streamGets + " stream GET" + (job.__streamGets === 1 ? "" : "s") + " (reconnects included)";
+      panel.appendChild(el("p", "poll-count", label));
+    }
+  } else if (job.__pollCount) {
     const label = job.__pollCount + " status request" + (job.__pollCount === 1 ? "" : "s") + " so far";
     panel.appendChild(el("p", "poll-count", label));
   }
+
+  // Explicit cancellation path for every mode (UI-07). Stopping observation
+  // never stops the worker or changes the job.
+  const stop = el("button", "button button-outline poll-stop");
+  stop.type = "button";
+  stop.id = "stopObservationButton";
+  stop.textContent = "Stop observing";
+  panel.appendChild(stop);
   return panel;
 }
 
@@ -247,7 +304,12 @@ function buildMeasurements(job) {
     add("Job duration", formatDuration(jobDuration));
   }
 
-  add("Polling count", String(job.__pollCount ?? 0));
+  if (job.mode === "sse") {
+    add("SSE events", String(job.__pollCount ?? 0));
+    add("Stream GETs", String(job.__streamGets ?? 0));
+  } else {
+    add("Polling count", String(job.__pollCount ?? 0));
+  }
   add("Detection delay", formatDuration(job.__detectionDelayMs));
 
   return dl;
@@ -276,9 +338,12 @@ export function renderJobCard(job, options) {
   grid.appendChild(main);
 
   const side = el("div", "job-side");
-  side.appendChild(
-    el("span", "mode-chip", job.mode === "long" ? "Long polling" : "Short polling")
-  );
+  const MODE_LABELS = {
+    short: "Short polling",
+    long: "Long polling",
+    sse: "Server-Sent Events",
+  };
+  side.appendChild(el("span", "mode-chip", MODE_LABELS[job.mode] || "Short polling"));
   const badge = STATUS_BADGE[job.status] || { text: job.status || "Unknown", className: "status-badge" };
   side.appendChild(el("span", badge.className, badge.text));
   side.appendChild(buildPollPanel(job, mode));

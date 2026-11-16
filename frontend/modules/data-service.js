@@ -8,6 +8,13 @@ const LONG_WAIT_SECONDS = 20;
 
 const JOB_STATES = ["queued", "processing", "completed", "failed"];
 
+// jobEventsUrl is the SSE endpoint for a job. It is derived from the same
+// status URL returned by the 202 response, so opening the stream never needs
+// a new upload or a new job id (UI-01).
+export function jobEventsUrl(statusUrl) {
+  return statusUrl + "/events";
+}
+
 // validateSnapshot checks that a 200 body is a usable job representation and
 // returns it, or throws a retrieval-error message.
 function validateSnapshot(body) {
@@ -21,6 +28,19 @@ function validateSnapshot(body) {
     throw new Error("completed status response had no variants");
   }
   return body;
+}
+
+// parseJobSnapshot validates one SSE data payload with the same rules used
+// for polling responses, so all three modes feed an identical representation
+// to the renderer (UI-02).
+export function parseJobSnapshot(text) {
+  let body;
+  try {
+    body = JSON.parse(text);
+  } catch (_) {
+    throw new Error("job event could not be read");
+  }
+  return validateSnapshot(body);
 }
 
 export async function submitImage(file) {

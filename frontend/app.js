@@ -4,6 +4,8 @@ import {
   fetchJobSnapshot,
   fetchJobStatus,
   observeJobAfter,
+  jobEventsUrl,
+  parseJobSnapshot,
 } from "./modules/data-service.js";
 import {
   renderPreview,
@@ -18,6 +20,10 @@ import {
 } from "./render.js";
 
 const POLL_INTERVAL_MS = 1000;
+// A fatal stream close (for example a proxy answering 502 while the API is
+// restarting) ends EventSource's own reconnection. The page retries explicitly
+// after this delay so observation resumes once the server is reachable again.
+const SSE_RECONNECT_MS = 2500;
 
 const fileInput = document.getElementById("fileInput");
 const chooseButton = document.getElementById("chooseButton");
@@ -41,6 +47,12 @@ processButton.addEventListener("click", submit);
 jobCardBody.addEventListener("click", (event) => {
   if (event.target.closest("#tryAgainButton")) {
     resumeObservation();
+  }
+  if (event.target.closest("#resumeObservationButton")) {
+    resumeObservation();
+  }
+  if (event.target.closest("#stopObservationButton")) {
+    stopObserving();
   }
 });
 
@@ -222,7 +234,18 @@ async function startObservation() {
   state.observing = true;
   state.observationAbortController = controller;
   state.job.mode = mode;
+  state.observationStopped = false;
+  state.retrievalError = false;
   renderJobCard(state.job);
+
+  // SSE opens one stream and receives its initial snapshot from the server
+  // rather than issuing a separate prompt GET. The stream is the only
+  // observation request, so no image is re-submitted and no second job is
+  // created (UI-01, UI-02).
+  if (mode === "sse") {
+    startEventStream(token, statusUrl);
+    return;
+  }
 
   // Initial prompt snapshot: the server never waits on this request (API-01).
   let job;
@@ -253,6 +276,101 @@ async function startObservation() {
   } else {
     shortPollLoop(token, statusUrl);
   }
+}
+
+// startEventStream opens exactly one EventSource for the selected job. The
+// server sends the current snapshot immediately, then a job-update frame per
+// committed version. On a temporary error the same object is left open so the
+// browser reconnects and the server answers with the latest snapshot; if the
+// browser gives up (a non-200 response ends EventSource for good), the page
+// opens one fresh EventSource after a short delay. Missed intermediate
+// versions are recovered as a snapshot, not replayed (UI-02, UI-04, UI-05).
+function startEventStream(token, statusUrl, resetGets = true) {
+  if (resetGets) state.sseStreamGets = 0;
+  state.sseConnected = false;
+  closeEventSource();
+
+  const source = new EventSource(jobEventsUrl(statusUrl));
+  state.eventSource = source;
+
+  source.onopen = () => {
+    if (token !== state.generation) {
+      source.close();
+      return;
+    }
+    state.sseConnected = true;
+    state.sseStreamGets += 1;
+    state.job.__streamGets = state.sseStreamGets;
+    renderJobCard(state.job);
+  };
+
+  source.addEventListener("job-update", (event) => {
+    if (token !== state.generation) return;
+
+    let job;
+    try {
+      job = parseJobSnapshot(event.data);
+    } catch (error) {
+      handleRetrievalError();
+      return;
+    }
+
+    state.pollCount += 1;
+    applySnapshot(job);
+
+    if (job.status === "completed") {
+      closeEventSource();
+      finishCompleted(job);
+      return;
+    }
+    if (job.status === "failed") {
+      closeEventSource();
+      finishFailed(job);
+      return;
+    }
+    renderResultsProcessing();
+  });
+
+  source.onerror = () => {
+    if (token !== state.generation) return;
+    // A dropped connection is an observation problem, not a job failure.
+    // CONNECTING means EventSource will retry by itself; CLOSED means it has
+    // given up (for example after a non-200 response), so schedule one
+    // explicit reconnect that will receive a current snapshot (UI-04).
+    state.sseConnected = false;
+    renderJobCard(state.job, { mode: "reconnecting" });
+
+    if (source.readyState === EventSource.CLOSED && !state.sseReconnectTimer) {
+      state.sseReconnectTimer = setTimeout(() => {
+        state.sseReconnectTimer = null;
+        if (token !== state.generation || !state.observing) return;
+        startEventStream(token, statusUrl, false);
+      }, SSE_RECONNECT_MS);
+    }
+  };
+}
+
+// closeEventSource closes the browser stream exactly once. It is called on
+// terminal snapshots, explicit stop, mode changes, and page unload.
+function closeEventSource() {
+  if (state.sseReconnectTimer) {
+    clearTimeout(state.sseReconnectTimer);
+    state.sseReconnectTimer = null;
+  }
+  if (state.eventSource) {
+    state.eventSource.close();
+    state.eventSource = null;
+  }
+  state.sseConnected = false;
+}
+
+// stopObserving is the explicit user cancellation path (UI-07). It ends
+// observation only; the worker and the durable job continue unchanged.
+function stopObserving() {
+  if (!state.job || !state.observing) return;
+  stopObservation();
+  state.observationStopped = true;
+  renderJobCard(state.job, { mode: "stopped" });
 }
 
 // shortPollLoop asks for a prompt snapshot approximately every second until a
@@ -346,6 +464,7 @@ function applySnapshot(job) {
     variants_completed: job.variants_completed ?? state.job.variants_completed,
     simulation_step: job.simulation_step ?? state.job.simulation_step,
     __pollCount: state.pollCount,
+    __streamGets: state.sseStreamGets,
     __ackLatencyMs: state.ackLatencyMs,
   };
 
@@ -400,6 +519,7 @@ function handleModeChange() {
 function stopObservation() {
   state.generation += 1;
   state.observing = false;
+  closeEventSource();
   if (state.observationAbortController) {
     state.observationAbortController.abort();
     state.observationAbortController = null;

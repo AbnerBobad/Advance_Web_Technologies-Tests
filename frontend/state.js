@@ -13,8 +13,8 @@ export const state = {
   // It is never cleared on a retrieval error.
   job: null,
 
-  // mode is the selected observation strategy: "short" or "long". It is read
-  // from the selector each time an observation loop starts.
+  // mode is the selected observation strategy: "short", "long", or "sse".
+  // It is read from the selector each time an observation loop starts.
   mode: "short",
 
   // generation is the observation token. Every observation loop captures the
@@ -31,6 +31,17 @@ export const state = {
   observationAbortController: null,
   retrievalError: false,
   pollCount: 0,
+
+  // SSE bookkeeping (UI-02, UI-04). eventSource is the single EventSource
+  // for the current job; it is deliberately kept across temporary errors so
+  // the browser can reconnect. sseConnected reflects the last open/error
+  // event, and sseStreamGets counts stream GETs (initial connect plus
+  // browser reconnects) for display and measurement.
+  eventSource: null,
+  sseConnected: false,
+  sseStreamGets: 0,
+  sseReconnectTimer: null,
+  observationStopped: false,
 
   // Week 4 measurements (Section 15). ackLatencyMs is the time between the
   // browser starting the upload POST and receiving the 202 response;

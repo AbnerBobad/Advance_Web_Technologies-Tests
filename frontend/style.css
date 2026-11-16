@@ -831,6 +831,17 @@ body {
   background: var(--success-soft);
 }
 
+.poll-panel--stopped {
+  border-color: var(--border);
+  background: var(--panel);
+}
+
+.poll-stop {
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 0.74rem;
+}
+
 .poll-row {
   display: flex;
   align-items: center;
