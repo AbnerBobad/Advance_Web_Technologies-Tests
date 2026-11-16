@@ -1,0 +1,9 @@
+{"at":"2026-11-16T16:47:34.696221157Z","run":"B-sse-2-104734.669","event":"ack","http":202,"version":1,"note":"78996ad5-54d5-4784-9be1-17f4c6caf363"}
+{"at":"2026-11-16T16:47:34.696290268Z","run":"B-sse-2-104734.669","event":"sse_connect","seq":1,"mode":"sse","note":"http://localhost:4000/v1/jobs/78996ad5-54d5-4784-9be1-17f4c6caf363/events"}
+{"at":"2026-11-16T16:47:34.697159561Z","run":"B-sse-2-104734.669","event":"sse_open","mode":"sse","http":200,"note":"text/event-stream; charset=utf-8"}
+{"at":"2026-11-16T16:47:34.697239841Z","run":"B-sse-2-104734.669","event":"sse_job_update","mode":"sse","version":1,"status":"queued"}
+{"at":"2026-11-16T16:47:34.765102696Z","run":"B-sse-2-104734.669","event":"sse_job_update","mode":"sse","version":2,"status":"processing"}
+{"at":"2026-11-16T16:47:34.876824256Z","run":"B-sse-2-104734.669","event":"sse_job_update","mode":"sse","version":3,"status":"processing"}
+{"at":"2026-11-16T16:47:34.881138449Z","run":"B-sse-2-104734.669","event":"sse_job_update","mode":"sse","version":4,"status":"processing"}
+{"at":"2026-11-16T16:47:34.888383649Z","run":"B-sse-2-104734.669","event":"sse_job_update","mode":"sse","version":5,"status":"completed"}
+{"at":"2026-11-16T16:47:34.888479187Z","run":"B-sse-2-104734.669","event":"terminal","http":200,"version":5,"status":"completed"}

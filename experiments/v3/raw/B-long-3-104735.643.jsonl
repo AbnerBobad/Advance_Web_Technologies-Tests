@@ -1,0 +1,12 @@
+{"at":"2026-11-16T16:47:35.655088087Z","run":"B-long-3-104735.643","event":"ack","http":202,"version":1,"note":"dae3d872-2ed4-40b4-81f1-21e884e8367c"}
+{"at":"2026-11-16T16:47:35.655192727Z","run":"B-long-3-104735.643","event":"request","seq":1,"mode":"long","note":"http://localhost:4000/v1/jobs/dae3d872-2ed4-40b4-81f1-21e884e8367c"}
+{"at":"2026-11-16T16:47:35.657021198Z","run":"B-long-3-104735.643","event":"response","seq":1,"mode":"long","http":200,"version":1,"status":"queued"}
+{"at":"2026-11-16T16:47:35.65709276Z","run":"B-long-3-104735.643","event":"request","seq":2,"mode":"long","note":"http://localhost:4000/v1/jobs/dae3d872-2ed4-40b4-81f1-21e884e8367c?after=1\u0026wait=20"}
+{"at":"2026-11-16T16:47:35.767906604Z","run":"B-long-3-104735.643","event":"response","seq":2,"mode":"long","http":200,"version":2,"status":"processing"}
+{"at":"2026-11-16T16:47:35.768004919Z","run":"B-long-3-104735.643","event":"request","seq":3,"mode":"long","note":"http://localhost:4000/v1/jobs/dae3d872-2ed4-40b4-81f1-21e884e8367c?after=2\u0026wait=20"}
+{"at":"2026-11-16T16:47:35.881672196Z","run":"B-long-3-104735.643","event":"response","seq":3,"mode":"long","http":200,"version":3,"status":"processing"}
+{"at":"2026-11-16T16:47:35.881711924Z","run":"B-long-3-104735.643","event":"request","seq":4,"mode":"long","note":"http://localhost:4000/v1/jobs/dae3d872-2ed4-40b4-81f1-21e884e8367c?after=3\u0026wait=20"}
+{"at":"2026-11-16T16:47:35.885205074Z","run":"B-long-3-104735.643","event":"response","seq":4,"mode":"long","http":200,"version":4,"status":"processing"}
+{"at":"2026-11-16T16:47:35.885237658Z","run":"B-long-3-104735.643","event":"request","seq":5,"mode":"long","note":"http://localhost:4000/v1/jobs/dae3d872-2ed4-40b4-81f1-21e884e8367c?after=4\u0026wait=20"}
+{"at":"2026-11-16T16:47:35.888628073Z","run":"B-long-3-104735.643","event":"response","seq":5,"mode":"long","http":200,"version":5,"status":"completed"}
+{"at":"2026-11-16T16:47:35.888646873Z","run":"B-long-3-104735.643","event":"terminal","http":200,"version":5,"status":"completed"}

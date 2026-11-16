@@ -1,0 +1,12 @@
+{"at":"2026-11-16T16:47:35.162659175Z","run":"B-long-1-104735.152","event":"ack","http":202,"version":1,"note":"f35cd5d3-1cbb-4895-95fe-c14216860e2e"}
+{"at":"2026-11-16T16:47:35.162702504Z","run":"B-long-1-104735.152","event":"request","seq":1,"mode":"long","note":"http://localhost:4000/v1/jobs/f35cd5d3-1cbb-4895-95fe-c14216860e2e"}
+{"at":"2026-11-16T16:47:35.16331636Z","run":"B-long-1-104735.152","event":"response","seq":1,"mode":"long","http":200,"version":1,"status":"queued"}
+{"at":"2026-11-16T16:47:35.16336129Z","run":"B-long-1-104735.152","event":"request","seq":2,"mode":"long","note":"http://localhost:4000/v1/jobs/f35cd5d3-1cbb-4895-95fe-c14216860e2e?after=1\u0026wait=20"}
+{"at":"2026-11-16T16:47:35.268645116Z","run":"B-long-1-104735.152","event":"response","seq":2,"mode":"long","http":200,"version":2,"status":"processing"}
+{"at":"2026-11-16T16:47:35.268717719Z","run":"B-long-1-104735.152","event":"request","seq":3,"mode":"long","note":"http://localhost:4000/v1/jobs/f35cd5d3-1cbb-4895-95fe-c14216860e2e?after=2\u0026wait=20"}
+{"at":"2026-11-16T16:47:35.387773838Z","run":"B-long-1-104735.152","event":"response","seq":3,"mode":"long","http":200,"version":3,"status":"processing"}
+{"at":"2026-11-16T16:47:35.387801616Z","run":"B-long-1-104735.152","event":"request","seq":4,"mode":"long","note":"http://localhost:4000/v1/jobs/f35cd5d3-1cbb-4895-95fe-c14216860e2e?after=3\u0026wait=20"}
+{"at":"2026-11-16T16:47:35.390922211Z","run":"B-long-1-104735.152","event":"response","seq":4,"mode":"long","http":200,"version":4,"status":"processing"}
+{"at":"2026-11-16T16:47:35.390951374Z","run":"B-long-1-104735.152","event":"request","seq":5,"mode":"long","note":"http://localhost:4000/v1/jobs/f35cd5d3-1cbb-4895-95fe-c14216860e2e?after=4\u0026wait=20"}
+{"at":"2026-11-16T16:47:35.394493858Z","run":"B-long-1-104735.152","event":"response","seq":5,"mode":"long","http":200,"version":5,"status":"completed"}
+{"at":"2026-11-16T16:47:35.394510973Z","run":"B-long-1-104735.152","event":"terminal","http":200,"version":5,"status":"completed"}

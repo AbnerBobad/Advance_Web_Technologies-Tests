@@ -1,0 +1,529 @@
+time=2026-11-16T10:47:35.898-06:00 level=INFO msg="database connection pool established"
+time=2026-11-16T10:47:35.898-06:00 level=INFO msg="experimental controls" processing_delay=0s quiet_delay=0s simulate_duration=10s simulate_interval=200ms worker_poll_interval=250ms
+time=2026-11-16T10:47:35.898-06:00 level=INFO msg="starting server" addr=:4000 env=development
+time=2026-11-16T10:47:35.918-06:00 level=INFO msg="job created" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 image_id=01a1e541-c7eb-727e-953a-0959c84b6fbd status=queued version=1
+time=2026-11-16T10:47:36.169-06:00 level=INFO msg="job change committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 status=processing version=2 committed_at=2026-11-16T16:47:36.169682901Z
+time=2026-11-16T10:47:36.169-06:00 level=INFO msg="image job started" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 image_id=01a1e541-c7eb-727e-953a-0959c84b6fbd
+time=2026-11-16T10:47:36.169-06:00 level=INFO msg="simulated phase started" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 duration=10s interval=200ms
+time=2026-11-16T10:47:36.171-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=251
+time=2026-11-16T10:47:36.386-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=1 version=3 committed_at=2026-11-16T16:47:36.386733789Z
+time=2026-11-16T10:47:36.387-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=215
+time=2026-11-16T10:47:36.586-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=2 version=4 committed_at=2026-11-16T16:47:36.586915696Z
+time=2026-11-16T10:47:36.587-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:36.774-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=3 version=5 committed_at=2026-11-16T16:47:36.774565491Z
+time=2026-11-16T10:47:36.775-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=186
+time=2026-11-16T10:47:36.986-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=4 version=6 committed_at=2026-11-16T16:47:36.986802316Z
+time=2026-11-16T10:47:36.987-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=211
+time=2026-11-16T10:47:37.187-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=5 version=7 committed_at=2026-11-16T16:47:37.18756597Z
+time=2026-11-16T10:47:37.189-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=200
+time=2026-11-16T10:47:37.375-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=6 version=8 committed_at=2026-11-16T16:47:37.375429677Z
+time=2026-11-16T10:47:37.377-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=187
+time=2026-11-16T10:47:37.587-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=7 version=9 committed_at=2026-11-16T16:47:37.587566255Z
+time=2026-11-16T10:47:37.589-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=210
+time=2026-11-16T10:47:37.788-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=8 version=10 committed_at=2026-11-16T16:47:37.788118699Z
+time=2026-11-16T10:47:37.789-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:37.987-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=9 version=11 committed_at=2026-11-16T16:47:37.987373113Z
+time=2026-11-16T10:47:37.988-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:38.187-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=10 version=12 committed_at=2026-11-16T16:47:38.187767951Z
+time=2026-11-16T10:47:38.189-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:38.387-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=11 version=13 committed_at=2026-11-16T16:47:38.387247505Z
+time=2026-11-16T10:47:38.388-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:38.587-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=12 version=14 committed_at=2026-11-16T16:47:38.587715216Z
+time=2026-11-16T10:47:38.589-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:38.788-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=13 version=15 committed_at=2026-11-16T16:47:38.788184674Z
+time=2026-11-16T10:47:38.789-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:38.986-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=14 version=16 committed_at=2026-11-16T16:47:38.986945954Z
+time=2026-11-16T10:47:38.988-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=197
+time=2026-11-16T10:47:39.187-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=15 version=17 committed_at=2026-11-16T16:47:39.187811362Z
+time=2026-11-16T10:47:39.189-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:39.388-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=16 version=18 committed_at=2026-11-16T16:47:39.388206381Z
+time=2026-11-16T10:47:39.390-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:39.587-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=17 version=19 committed_at=2026-11-16T16:47:39.587529608Z
+time=2026-11-16T10:47:39.589-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=197
+time=2026-11-16T10:47:39.787-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=18 version=20 committed_at=2026-11-16T16:47:39.787531266Z
+time=2026-11-16T10:47:39.789-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:39.988-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=19 version=21 committed_at=2026-11-16T16:47:39.988457263Z
+time=2026-11-16T10:47:39.990-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:40.188-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=20 version=22 committed_at=2026-11-16T16:47:40.188075652Z
+time=2026-11-16T10:47:40.189-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:40.388-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=21 version=23 committed_at=2026-11-16T16:47:40.388026046Z
+time=2026-11-16T10:47:40.389-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:40.574-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=22 version=24 committed_at=2026-11-16T16:47:40.574441682Z
+time=2026-11-16T10:47:40.576-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=184
+time=2026-11-16T10:47:40.787-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=23 version=25 committed_at=2026-11-16T16:47:40.787734093Z
+time=2026-11-16T10:47:40.789-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=212
+time=2026-11-16T10:47:40.988-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=24 version=26 committed_at=2026-11-16T16:47:40.988095518Z
+time=2026-11-16T10:47:40.989-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:41.187-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=25 version=27 committed_at=2026-11-16T16:47:41.187199236Z
+time=2026-11-16T10:47:41.189-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=197
+time=2026-11-16T10:47:41.387-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=26 version=28 committed_at=2026-11-16T16:47:41.387341465Z
+time=2026-11-16T10:47:41.389-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:41.575-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=27 version=29 committed_at=2026-11-16T16:47:41.575080673Z
+time=2026-11-16T10:47:41.576-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=186
+time=2026-11-16T10:47:41.788-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=28 version=30 committed_at=2026-11-16T16:47:41.788062984Z
+time=2026-11-16T10:47:41.789-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=211
+time=2026-11-16T10:47:41.987-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=29 version=31 committed_at=2026-11-16T16:47:41.987806245Z
+time=2026-11-16T10:47:41.989-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:42.187-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=30 version=32 committed_at=2026-11-16T16:47:42.187710932Z
+time=2026-11-16T10:47:42.189-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:42.387-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=31 version=33 committed_at=2026-11-16T16:47:42.387972513Z
+time=2026-11-16T10:47:42.389-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:42.576-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=32 version=34 committed_at=2026-11-16T16:47:42.576450438Z
+time=2026-11-16T10:47:42.578-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=187
+time=2026-11-16T10:47:42.775-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=33 version=35 committed_at=2026-11-16T16:47:42.775193293Z
+time=2026-11-16T10:47:42.776-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=197
+time=2026-11-16T10:47:42.987-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=34 version=36 committed_at=2026-11-16T16:47:42.987941353Z
+time=2026-11-16T10:47:42.989-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=211
+time=2026-11-16T10:47:43.187-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=35 version=37 committed_at=2026-11-16T16:47:43.187697772Z
+time=2026-11-16T10:47:43.189-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:43.389-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=36 version=38 committed_at=2026-11-16T16:47:43.388993619Z
+time=2026-11-16T10:47:43.390-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:43.587-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=37 version=39 committed_at=2026-11-16T16:47:43.587575305Z
+time=2026-11-16T10:47:43.589-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=197
+time=2026-11-16T10:47:43.787-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=38 version=40 committed_at=2026-11-16T16:47:43.787041152Z
+time=2026-11-16T10:47:43.788-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=197
+time=2026-11-16T10:47:43.987-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=39 version=41 committed_at=2026-11-16T16:47:43.987882728Z
+time=2026-11-16T10:47:43.989-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=200
+time=2026-11-16T10:47:44.187-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=40 version=42 committed_at=2026-11-16T16:47:44.18777041Z
+time=2026-11-16T10:47:44.189-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:44.387-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=41 version=43 committed_at=2026-11-16T16:47:44.387960724Z
+time=2026-11-16T10:47:44.389-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:44.587-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=42 version=44 committed_at=2026-11-16T16:47:44.587612171Z
+time=2026-11-16T10:47:44.589-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:44.787-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=43 version=45 committed_at=2026-11-16T16:47:44.787038192Z
+time=2026-11-16T10:47:44.788-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:44.988-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=44 version=46 committed_at=2026-11-16T16:47:44.988032095Z
+time=2026-11-16T10:47:44.989-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:45.187-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=45 version=47 committed_at=2026-11-16T16:47:45.187761456Z
+time=2026-11-16T10:47:45.189-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:45.387-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=46 version=48 committed_at=2026-11-16T16:47:45.38775593Z
+time=2026-11-16T10:47:45.389-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:45.587-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=47 version=49 committed_at=2026-11-16T16:47:45.587542958Z
+time=2026-11-16T10:47:45.589-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:45.787-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=48 version=50 committed_at=2026-11-16T16:47:45.787692464Z
+time=2026-11-16T10:47:45.789-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:45.987-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=49 version=51 committed_at=2026-11-16T16:47:45.987476265Z
+time=2026-11-16T10:47:45.989-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:46.187-06:00 level=INFO msg="simulated progress committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 simulation_step=50 version=52 committed_at=2026-11-16T16:47:46.187726845Z
+time=2026-11-16T10:47:46.187-06:00 level=INFO msg="simulated phase finished" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 steps=50
+time=2026-11-16T10:47:46.190-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=200
+time=2026-11-16T10:47:46.404-06:00 level=INFO msg="job change committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 status=processing version=53 committed_at=2026-11-16T16:47:46.404352621Z
+time=2026-11-16T10:47:46.404-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=212
+time=2026-11-16T10:47:46.412-06:00 level=INFO msg="job change committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 status=processing version=54 committed_at=2026-11-16T16:47:46.412310964Z
+time=2026-11-16T10:47:46.412-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=7
+time=2026-11-16T10:47:46.415-06:00 level=INFO msg="job change committed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 status=completed version=55 committed_at=2026-11-16T16:47:46.415473727Z
+time=2026-11-16T10:47:46.415-06:00 level=INFO msg="image job completed" job_id=d736deca-4c04-4e07-94b5-91ac6488b644
+time=2026-11-16T10:47:46.415-06:00 level=INFO msg="long poll ended" job_id=d736deca-4c04-4e07-94b5-91ac6488b644 end_reason=changed wait_ms=2
+time=2026-11-16T10:47:46.427-06:00 level=INFO msg="job created" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 image_id=01a1e541-f0f8-7cda-bd06-4a747a51a4b4 status=queued version=1
+time=2026-11-16T10:47:46.670-06:00 level=INFO msg="job change committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 status=processing version=2 committed_at=2026-11-16T16:47:46.670884734Z
+time=2026-11-16T10:47:46.671-06:00 level=INFO msg="image job started" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 image_id=01a1e541-f0f8-7cda-bd06-4a747a51a4b4
+time=2026-11-16T10:47:46.671-06:00 level=INFO msg="simulated phase started" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 duration=10s interval=200ms
+time=2026-11-16T10:47:46.672-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=244
+time=2026-11-16T10:47:46.889-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=1 version=3 committed_at=2026-11-16T16:47:46.889072845Z
+time=2026-11-16T10:47:46.890-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=216
+time=2026-11-16T10:47:47.087-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=2 version=4 committed_at=2026-11-16T16:47:47.087542214Z
+time=2026-11-16T10:47:47.088-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=196
+time=2026-11-16T10:47:47.287-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=3 version=5 committed_at=2026-11-16T16:47:47.287639375Z
+time=2026-11-16T10:47:47.288-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:47.488-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=4 version=6 committed_at=2026-11-16T16:47:47.488442474Z
+time=2026-11-16T10:47:47.489-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=200
+time=2026-11-16T10:47:47.688-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=5 version=7 committed_at=2026-11-16T16:47:47.688532628Z
+time=2026-11-16T10:47:47.689-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:47.887-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=6 version=8 committed_at=2026-11-16T16:47:47.887979471Z
+time=2026-11-16T10:47:47.888-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:48.087-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=7 version=9 committed_at=2026-11-16T16:47:48.087696468Z
+time=2026-11-16T10:47:48.088-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:48.288-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=8 version=10 committed_at=2026-11-16T16:47:48.288151559Z
+time=2026-11-16T10:47:48.289-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=200
+time=2026-11-16T10:47:48.488-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=9 version=11 committed_at=2026-11-16T16:47:48.488546946Z
+time=2026-11-16T10:47:48.489-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:48.675-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=10 version=12 committed_at=2026-11-16T16:47:48.67591696Z
+time=2026-11-16T10:47:48.676-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=185
+time=2026-11-16T10:47:48.888-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=11 version=13 committed_at=2026-11-16T16:47:48.888010298Z
+time=2026-11-16T10:47:48.888-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=211
+time=2026-11-16T10:47:49.088-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=12 version=14 committed_at=2026-11-16T16:47:49.088559406Z
+time=2026-11-16T10:47:49.090-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=200
+time=2026-11-16T10:47:49.288-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=13 version=15 committed_at=2026-11-16T16:47:49.288813416Z
+time=2026-11-16T10:47:49.290-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:49.487-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=14 version=16 committed_at=2026-11-16T16:47:49.487719378Z
+time=2026-11-16T10:47:49.488-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=197
+time=2026-11-16T10:47:49.688-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=15 version=17 committed_at=2026-11-16T16:47:49.688622646Z
+time=2026-11-16T10:47:49.690-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=201
+time=2026-11-16T10:47:49.888-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=16 version=18 committed_at=2026-11-16T16:47:49.888630623Z
+time=2026-11-16T10:47:49.889-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:50.088-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=17 version=19 committed_at=2026-11-16T16:47:50.088603194Z
+time=2026-11-16T10:47:50.089-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:50.288-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=18 version=20 committed_at=2026-11-16T16:47:50.287991869Z
+time=2026-11-16T10:47:50.289-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:50.488-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=19 version=21 committed_at=2026-11-16T16:47:50.488388039Z
+time=2026-11-16T10:47:50.489-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:50.688-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=20 version=22 committed_at=2026-11-16T16:47:50.688015367Z
+time=2026-11-16T10:47:50.689-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:50.888-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=21 version=23 committed_at=2026-11-16T16:47:50.88847735Z
+time=2026-11-16T10:47:50.889-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:51.089-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=22 version=24 committed_at=2026-11-16T16:47:51.089202839Z
+time=2026-11-16T10:47:51.090-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:51.288-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=23 version=25 committed_at=2026-11-16T16:47:51.288426189Z
+time=2026-11-16T10:47:51.289-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=197
+time=2026-11-16T10:47:51.487-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=24 version=26 committed_at=2026-11-16T16:47:51.487471615Z
+time=2026-11-16T10:47:51.488-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=196
+time=2026-11-16T10:47:51.689-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=25 version=27 committed_at=2026-11-16T16:47:51.689354127Z
+time=2026-11-16T10:47:51.690-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=201
+time=2026-11-16T10:47:51.889-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=26 version=28 committed_at=2026-11-16T16:47:51.889095932Z
+time=2026-11-16T10:47:51.890-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:52.088-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=27 version=29 committed_at=2026-11-16T16:47:52.088231365Z
+time=2026-11-16T10:47:52.089-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=197
+time=2026-11-16T10:47:52.288-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=28 version=30 committed_at=2026-11-16T16:47:52.288488381Z
+time=2026-11-16T10:47:52.289-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=200
+time=2026-11-16T10:47:52.489-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=29 version=31 committed_at=2026-11-16T16:47:52.489390882Z
+time=2026-11-16T10:47:52.491-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=200
+time=2026-11-16T10:47:52.692-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=30 version=32 committed_at=2026-11-16T16:47:52.692617213Z
+time=2026-11-16T10:47:52.694-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=201
+time=2026-11-16T10:47:52.887-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=31 version=33 committed_at=2026-11-16T16:47:52.887678925Z
+time=2026-11-16T10:47:52.889-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=193
+time=2026-11-16T10:47:53.089-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=32 version=34 committed_at=2026-11-16T16:47:53.089229693Z
+time=2026-11-16T10:47:53.090-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=200
+time=2026-11-16T10:47:53.289-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=33 version=35 committed_at=2026-11-16T16:47:53.289602116Z
+time=2026-11-16T10:47:53.291-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:53.475-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=34 version=36 committed_at=2026-11-16T16:47:53.475130734Z
+time=2026-11-16T10:47:53.476-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=183
+time=2026-11-16T10:47:53.688-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=35 version=37 committed_at=2026-11-16T16:47:53.688231533Z
+time=2026-11-16T10:47:53.689-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=212
+time=2026-11-16T10:47:53.888-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=36 version=38 committed_at=2026-11-16T16:47:53.888681234Z
+time=2026-11-16T10:47:53.889-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=200
+time=2026-11-16T10:47:54.088-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=37 version=39 committed_at=2026-11-16T16:47:54.088894684Z
+time=2026-11-16T10:47:54.090-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:54.288-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=38 version=40 committed_at=2026-11-16T16:47:54.288476623Z
+time=2026-11-16T10:47:54.289-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:54.488-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=39 version=41 committed_at=2026-11-16T16:47:54.488247722Z
+time=2026-11-16T10:47:54.489-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:54.687-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=40 version=42 committed_at=2026-11-16T16:47:54.687785222Z
+time=2026-11-16T10:47:54.688-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:54.888-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=41 version=43 committed_at=2026-11-16T16:47:54.888168438Z
+time=2026-11-16T10:47:54.888-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:55.088-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=42 version=44 committed_at=2026-11-16T16:47:55.088128911Z
+time=2026-11-16T10:47:55.089-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:55.288-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=43 version=45 committed_at=2026-11-16T16:47:55.288663633Z
+time=2026-11-16T10:47:55.289-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:55.488-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=44 version=46 committed_at=2026-11-16T16:47:55.488219346Z
+time=2026-11-16T10:47:55.489-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:55.688-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=45 version=47 committed_at=2026-11-16T16:47:55.688267633Z
+time=2026-11-16T10:47:55.689-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:55.887-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=46 version=48 committed_at=2026-11-16T16:47:55.887651355Z
+time=2026-11-16T10:47:55.888-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:56.088-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=47 version=49 committed_at=2026-11-16T16:47:56.088109228Z
+time=2026-11-16T10:47:56.089-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:56.287-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=48 version=50 committed_at=2026-11-16T16:47:56.287656499Z
+time=2026-11-16T10:47:56.288-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:56.488-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=49 version=51 committed_at=2026-11-16T16:47:56.488428146Z
+time=2026-11-16T10:47:56.489-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=200
+time=2026-11-16T10:47:56.688-06:00 level=INFO msg="simulated progress committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 simulation_step=50 version=52 committed_at=2026-11-16T16:47:56.688164219Z
+time=2026-11-16T10:47:56.688-06:00 level=INFO msg="simulated phase finished" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 steps=50
+time=2026-11-16T10:47:56.689-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:56.806-06:00 level=INFO msg="job change committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 status=processing version=53 committed_at=2026-11-16T16:47:56.806316012Z
+time=2026-11-16T10:47:56.806-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=115
+time=2026-11-16T10:47:56.809-06:00 level=INFO msg="job change committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 status=processing version=54 committed_at=2026-11-16T16:47:56.809773346Z
+time=2026-11-16T10:47:56.810-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=2
+time=2026-11-16T10:47:56.813-06:00 level=INFO msg="job change committed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 status=completed version=55 committed_at=2026-11-16T16:47:56.812999707Z
+time=2026-11-16T10:47:56.813-06:00 level=INFO msg="image job completed" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50
+time=2026-11-16T10:47:56.813-06:00 level=INFO msg="long poll ended" job_id=462cd2dd-ed84-4be7-b1e6-2c6c0a1c7d50 end_reason=changed wait_ms=2
+time=2026-11-16T10:47:56.825-06:00 level=INFO msg="job created" job_id=91076287-aadb-4966-a388-b789f4424f35 image_id=01a1e542-1996-7e68-a630-d4d6a4d5335e status=queued version=1
+time=2026-11-16T10:47:56.906-06:00 level=INFO msg="job change committed" job_id=91076287-aadb-4966-a388-b789f4424f35 status=processing version=2 committed_at=2026-11-16T16:47:56.906448619Z
+time=2026-11-16T10:47:56.906-06:00 level=INFO msg="image job started" job_id=91076287-aadb-4966-a388-b789f4424f35 image_id=01a1e542-1996-7e68-a630-d4d6a4d5335e
+time=2026-11-16T10:47:56.906-06:00 level=INFO msg="simulated phase started" job_id=91076287-aadb-4966-a388-b789f4424f35 duration=10s interval=200ms
+time=2026-11-16T10:47:56.908-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=81
+time=2026-11-16T10:47:57.123-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=1 version=3 committed_at=2026-11-16T16:47:57.123343034Z
+time=2026-11-16T10:47:57.124-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=215
+time=2026-11-16T10:47:57.323-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=2 version=4 committed_at=2026-11-16T16:47:57.32340783Z
+time=2026-11-16T10:47:57.323-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:57.523-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=3 version=5 committed_at=2026-11-16T16:47:57.523165276Z
+time=2026-11-16T10:47:57.524-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:57.722-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=4 version=6 committed_at=2026-11-16T16:47:57.722892618Z
+time=2026-11-16T10:47:57.723-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:57.923-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=5 version=7 committed_at=2026-11-16T16:47:57.923522505Z
+time=2026-11-16T10:47:57.924-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:58.123-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=6 version=8 committed_at=2026-11-16T16:47:58.123166133Z
+time=2026-11-16T10:47:58.124-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:58.323-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=7 version=9 committed_at=2026-11-16T16:47:58.323627618Z
+time=2026-11-16T10:47:58.324-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:58.523-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=8 version=10 committed_at=2026-11-16T16:47:58.523476686Z
+time=2026-11-16T10:47:58.524-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:58.723-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=9 version=11 committed_at=2026-11-16T16:47:58.723205134Z
+time=2026-11-16T10:47:58.724-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:58.923-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=10 version=12 committed_at=2026-11-16T16:47:58.923835643Z
+time=2026-11-16T10:47:58.924-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:47:59.122-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=11 version=13 committed_at=2026-11-16T16:47:59.122638098Z
+time=2026-11-16T10:47:59.123-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=197
+time=2026-11-16T10:47:59.323-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=12 version=14 committed_at=2026-11-16T16:47:59.323506316Z
+time=2026-11-16T10:47:59.324-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=201
+time=2026-11-16T10:47:59.523-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=13 version=15 committed_at=2026-11-16T16:47:59.523336706Z
+time=2026-11-16T10:47:59.523-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:47:59.724-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=14 version=16 committed_at=2026-11-16T16:47:59.72438626Z
+time=2026-11-16T10:47:59.726-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=201
+time=2026-11-16T10:47:59.924-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=15 version=17 committed_at=2026-11-16T16:47:59.92406102Z
+time=2026-11-16T10:47:59.925-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:00.124-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=16 version=18 committed_at=2026-11-16T16:48:00.124822985Z
+time=2026-11-16T10:48:00.126-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:00.324-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=17 version=19 committed_at=2026-11-16T16:48:00.324344078Z
+time=2026-11-16T10:48:00.326-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:00.525-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=18 version=20 committed_at=2026-11-16T16:48:00.524992546Z
+time=2026-11-16T10:48:00.526-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:00.718-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=19 version=21 committed_at=2026-11-16T16:48:00.718912947Z
+time=2026-11-16T10:48:00.720-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=192
+time=2026-11-16T10:48:00.924-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=20 version=22 committed_at=2026-11-16T16:48:00.924891076Z
+time=2026-11-16T10:48:00.926-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=204
+time=2026-11-16T10:48:01.124-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=21 version=23 committed_at=2026-11-16T16:48:01.124663427Z
+time=2026-11-16T10:48:01.126-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:01.324-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=22 version=24 committed_at=2026-11-16T16:48:01.324072048Z
+time=2026-11-16T10:48:01.325-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:01.524-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=23 version=25 committed_at=2026-11-16T16:48:01.524836355Z
+time=2026-11-16T10:48:01.526-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:01.724-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=24 version=26 committed_at=2026-11-16T16:48:01.724323026Z
+time=2026-11-16T10:48:01.725-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:01.924-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=25 version=27 committed_at=2026-11-16T16:48:01.924647208Z
+time=2026-11-16T10:48:01.926-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:02.125-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=26 version=28 committed_at=2026-11-16T16:48:02.125026616Z
+time=2026-11-16T10:48:02.126-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:02.323-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=27 version=29 committed_at=2026-11-16T16:48:02.323764044Z
+time=2026-11-16T10:48:02.325-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=197
+time=2026-11-16T10:48:02.524-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=28 version=30 committed_at=2026-11-16T16:48:02.52420461Z
+time=2026-11-16T10:48:02.525-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:02.724-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=29 version=31 committed_at=2026-11-16T16:48:02.72470528Z
+time=2026-11-16T10:48:02.726-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:02.924-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=30 version=32 committed_at=2026-11-16T16:48:02.924166094Z
+time=2026-11-16T10:48:02.925-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=197
+time=2026-11-16T10:48:03.124-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=31 version=33 committed_at=2026-11-16T16:48:03.124105715Z
+time=2026-11-16T10:48:03.125-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:03.324-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=32 version=34 committed_at=2026-11-16T16:48:03.324697353Z
+time=2026-11-16T10:48:03.326-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:03.524-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=33 version=35 committed_at=2026-11-16T16:48:03.524778123Z
+time=2026-11-16T10:48:03.526-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:03.724-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=34 version=36 committed_at=2026-11-16T16:48:03.72446339Z
+time=2026-11-16T10:48:03.726-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:03.924-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=35 version=37 committed_at=2026-11-16T16:48:03.924359909Z
+time=2026-11-16T10:48:03.926-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:04.124-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=36 version=38 committed_at=2026-11-16T16:48:04.124305533Z
+time=2026-11-16T10:48:04.125-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:04.324-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=37 version=39 committed_at=2026-11-16T16:48:04.324150394Z
+time=2026-11-16T10:48:04.325-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:04.523-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=38 version=40 committed_at=2026-11-16T16:48:04.523234568Z
+time=2026-11-16T10:48:04.524-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=197
+time=2026-11-16T10:48:04.723-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=39 version=41 committed_at=2026-11-16T16:48:04.723892098Z
+time=2026-11-16T10:48:04.724-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:04.924-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=40 version=42 committed_at=2026-11-16T16:48:04.924081477Z
+time=2026-11-16T10:48:04.925-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:05.110-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=41 version=43 committed_at=2026-11-16T16:48:05.110729365Z
+time=2026-11-16T10:48:05.111-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=185
+time=2026-11-16T10:48:05.323-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=42 version=44 committed_at=2026-11-16T16:48:05.323231474Z
+time=2026-11-16T10:48:05.324-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=211
+time=2026-11-16T10:48:05.523-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=43 version=45 committed_at=2026-11-16T16:48:05.523405376Z
+time=2026-11-16T10:48:05.524-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:05.723-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=44 version=46 committed_at=2026-11-16T16:48:05.723370989Z
+time=2026-11-16T10:48:05.724-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:05.923-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=45 version=47 committed_at=2026-11-16T16:48:05.923620576Z
+time=2026-11-16T10:48:05.924-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=200
+time=2026-11-16T10:48:06.123-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=46 version=48 committed_at=2026-11-16T16:48:06.123905587Z
+time=2026-11-16T10:48:06.125-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:06.324-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=47 version=49 committed_at=2026-11-16T16:48:06.324524834Z
+time=2026-11-16T10:48:06.326-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:06.523-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=48 version=50 committed_at=2026-11-16T16:48:06.52371425Z
+time=2026-11-16T10:48:06.525-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=198
+time=2026-11-16T10:48:06.724-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=49 version=51 committed_at=2026-11-16T16:48:06.723989803Z
+time=2026-11-16T10:48:06.725-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=199
+time=2026-11-16T10:48:06.924-06:00 level=INFO msg="simulated progress committed" job_id=91076287-aadb-4966-a388-b789f4424f35 simulation_step=50 version=52 committed_at=2026-11-16T16:48:06.924973553Z
+time=2026-11-16T10:48:06.925-06:00 level=INFO msg="simulated phase finished" job_id=91076287-aadb-4966-a388-b789f4424f35 steps=50
+time=2026-11-16T10:48:06.927-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=200
+time=2026-11-16T10:48:07.106-06:00 level=INFO msg="job change committed" job_id=91076287-aadb-4966-a388-b789f4424f35 status=processing version=53 committed_at=2026-11-16T16:48:07.106038447Z
+time=2026-11-16T10:48:07.106-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=177
+time=2026-11-16T10:48:07.109-06:00 level=INFO msg="job change committed" job_id=91076287-aadb-4966-a388-b789f4424f35 status=processing version=54 committed_at=2026-11-16T16:48:07.109381104Z
+time=2026-11-16T10:48:07.109-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=2
+time=2026-11-16T10:48:07.112-06:00 level=INFO msg="job change committed" job_id=91076287-aadb-4966-a388-b789f4424f35 status=completed version=55 committed_at=2026-11-16T16:48:07.112930335Z
+time=2026-11-16T10:48:07.112-06:00 level=INFO msg="image job completed" job_id=91076287-aadb-4966-a388-b789f4424f35
+time=2026-11-16T10:48:07.113-06:00 level=INFO msg="long poll ended" job_id=91076287-aadb-4966-a388-b789f4424f35 end_reason=changed wait_ms=3
+time=2026-11-16T10:48:07.131-06:00 level=INFO msg="job created" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 image_id=01a1e542-41d6-7e0c-89d7-6076fd6b492a status=queued version=1
+time=2026-11-16T10:48:07.132-06:00 level=INFO msg="sse stream started" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 version=1 status=queued active_streams=1 peak_active_streams=1
+time=2026-11-16T10:48:07.152-06:00 level=INFO msg="job change committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 status=processing version=2 committed_at=2026-11-16T16:48:07.152268933Z
+time=2026-11-16T10:48:07.152-06:00 level=INFO msg="image job started" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 image_id=01a1e542-41d6-7e0c-89d7-6076fd6b492a
+time=2026-11-16T10:48:07.152-06:00 level=INFO msg="simulated phase started" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 duration=10s interval=200ms
+time=2026-11-16T10:48:07.370-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=1 version=3 committed_at=2026-11-16T16:48:07.370445651Z
+time=2026-11-16T10:48:07.568-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=2 version=4 committed_at=2026-11-16T16:48:07.568878517Z
+time=2026-11-16T10:48:07.769-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=3 version=5 committed_at=2026-11-16T16:48:07.769252065Z
+time=2026-11-16T10:48:07.968-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=4 version=6 committed_at=2026-11-16T16:48:07.968292062Z
+time=2026-11-16T10:48:08.169-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=5 version=7 committed_at=2026-11-16T16:48:08.169249769Z
+time=2026-11-16T10:48:08.368-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=6 version=8 committed_at=2026-11-16T16:48:08.368874238Z
+time=2026-11-16T10:48:08.569-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=7 version=9 committed_at=2026-11-16T16:48:08.569318474Z
+time=2026-11-16T10:48:08.770-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=8 version=10 committed_at=2026-11-16T16:48:08.770029804Z
+time=2026-11-16T10:48:08.970-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=9 version=11 committed_at=2026-11-16T16:48:08.970594041Z
+time=2026-11-16T10:48:09.169-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=10 version=12 committed_at=2026-11-16T16:48:09.169789978Z
+time=2026-11-16T10:48:09.370-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=11 version=13 committed_at=2026-11-16T16:48:09.370637119Z
+time=2026-11-16T10:48:09.570-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=12 version=14 committed_at=2026-11-16T16:48:09.570205631Z
+time=2026-11-16T10:48:09.770-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=13 version=15 committed_at=2026-11-16T16:48:09.770515169Z
+time=2026-11-16T10:48:09.969-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=14 version=16 committed_at=2026-11-16T16:48:09.969335327Z
+time=2026-11-16T10:48:10.171-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=15 version=17 committed_at=2026-11-16T16:48:10.171285312Z
+time=2026-11-16T10:48:10.370-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=16 version=18 committed_at=2026-11-16T16:48:10.37077593Z
+time=2026-11-16T10:48:10.570-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=17 version=19 committed_at=2026-11-16T16:48:10.57002738Z
+time=2026-11-16T10:48:10.770-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=18 version=20 committed_at=2026-11-16T16:48:10.770450879Z
+time=2026-11-16T10:48:10.969-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=19 version=21 committed_at=2026-11-16T16:48:10.969628946Z
+time=2026-11-16T10:48:11.169-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=20 version=22 committed_at=2026-11-16T16:48:11.169791175Z
+time=2026-11-16T10:48:11.370-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=21 version=23 committed_at=2026-11-16T16:48:11.370017396Z
+time=2026-11-16T10:48:11.570-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=22 version=24 committed_at=2026-11-16T16:48:11.569993846Z
+time=2026-11-16T10:48:11.770-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=23 version=25 committed_at=2026-11-16T16:48:11.77016265Z
+time=2026-11-16T10:48:11.970-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=24 version=26 committed_at=2026-11-16T16:48:11.970215431Z
+time=2026-11-16T10:48:12.170-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=25 version=27 committed_at=2026-11-16T16:48:12.170411314Z
+time=2026-11-16T10:48:12.369-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=26 version=28 committed_at=2026-11-16T16:48:12.369508268Z
+time=2026-11-16T10:48:12.569-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=27 version=29 committed_at=2026-11-16T16:48:12.569555157Z
+time=2026-11-16T10:48:12.769-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=28 version=30 committed_at=2026-11-16T16:48:12.769615908Z
+time=2026-11-16T10:48:12.969-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=29 version=31 committed_at=2026-11-16T16:48:12.969809558Z
+time=2026-11-16T10:48:13.170-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=30 version=32 committed_at=2026-11-16T16:48:13.170091167Z
+time=2026-11-16T10:48:13.370-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=31 version=33 committed_at=2026-11-16T16:48:13.37031295Z
+time=2026-11-16T10:48:13.570-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=32 version=34 committed_at=2026-11-16T16:48:13.570514689Z
+time=2026-11-16T10:48:13.769-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=33 version=35 committed_at=2026-11-16T16:48:13.769569726Z
+time=2026-11-16T10:48:13.969-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=34 version=36 committed_at=2026-11-16T16:48:13.969628082Z
+time=2026-11-16T10:48:14.169-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=35 version=37 committed_at=2026-11-16T16:48:14.169751715Z
+time=2026-11-16T10:48:14.370-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=36 version=38 committed_at=2026-11-16T16:48:14.370223945Z
+time=2026-11-16T10:48:14.570-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=37 version=39 committed_at=2026-11-16T16:48:14.570216269Z
+time=2026-11-16T10:48:14.770-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=38 version=40 committed_at=2026-11-16T16:48:14.770286521Z
+time=2026-11-16T10:48:14.970-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=39 version=41 committed_at=2026-11-16T16:48:14.970216513Z
+time=2026-11-16T10:48:15.170-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=40 version=42 committed_at=2026-11-16T16:48:15.170719822Z
+time=2026-11-16T10:48:15.369-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=41 version=43 committed_at=2026-11-16T16:48:15.369842562Z
+time=2026-11-16T10:48:15.570-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=42 version=44 committed_at=2026-11-16T16:48:15.570371338Z
+time=2026-11-16T10:48:15.758-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=43 version=45 committed_at=2026-11-16T16:48:15.75857975Z
+time=2026-11-16T10:48:15.969-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=44 version=46 committed_at=2026-11-16T16:48:15.969707961Z
+time=2026-11-16T10:48:16.170-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=45 version=47 committed_at=2026-11-16T16:48:16.170391923Z
+time=2026-11-16T10:48:16.357-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=46 version=48 committed_at=2026-11-16T16:48:16.357177789Z
+time=2026-11-16T10:48:16.570-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=47 version=49 committed_at=2026-11-16T16:48:16.570879907Z
+time=2026-11-16T10:48:16.770-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=48 version=50 committed_at=2026-11-16T16:48:16.770356571Z
+time=2026-11-16T10:48:16.969-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=49 version=51 committed_at=2026-11-16T16:48:16.969767621Z
+time=2026-11-16T10:48:17.170-06:00 level=INFO msg="simulated progress committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 simulation_step=50 version=52 committed_at=2026-11-16T16:48:17.170422112Z
+time=2026-11-16T10:48:17.170-06:00 level=INFO msg="simulated phase finished" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 steps=50
+time=2026-11-16T10:48:17.374-06:00 level=INFO msg="job change committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 status=processing version=53 committed_at=2026-11-16T16:48:17.374686499Z
+time=2026-11-16T10:48:17.378-06:00 level=INFO msg="job change committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 status=processing version=54 committed_at=2026-11-16T16:48:17.378095972Z
+time=2026-11-16T10:48:17.381-06:00 level=INFO msg="job change committed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 status=completed version=55 committed_at=2026-11-16T16:48:17.381308304Z
+time=2026-11-16T10:48:17.381-06:00 level=INFO msg="image job completed" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3
+time=2026-11-16T10:48:17.381-06:00 level=INFO msg="sse stream ended" job_id=01b6c00e-6680-440e-888c-22c4b43bf0b3 end_reason=terminal events_sent=55 heartbeats=1 db_reads=55 duration_ms=10249 active_streams=0 peak_active_streams=1
+time=2026-11-16T10:48:17.392-06:00 level=INFO msg="job created" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 image_id=01a1e542-69ed-76c5-a9e7-4b2dcc2592f5 status=queued version=1
+time=2026-11-16T10:48:17.392-06:00 level=INFO msg="sse stream started" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 version=1 status=queued active_streams=1 peak_active_streams=1
+time=2026-11-16T10:48:17.402-06:00 level=INFO msg="job change committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 status=processing version=2 committed_at=2026-11-16T16:48:17.402364404Z
+time=2026-11-16T10:48:17.402-06:00 level=INFO msg="image job started" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 image_id=01a1e542-69ed-76c5-a9e7-4b2dcc2592f5
+time=2026-11-16T10:48:17.402-06:00 level=INFO msg="simulated phase started" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 duration=10s interval=200ms
+time=2026-11-16T10:48:17.619-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=1 version=3 committed_at=2026-11-16T16:48:17.619814449Z
+time=2026-11-16T10:48:17.819-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=2 version=4 committed_at=2026-11-16T16:48:17.819038007Z
+time=2026-11-16T10:48:18.019-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=3 version=5 committed_at=2026-11-16T16:48:18.019581728Z
+time=2026-11-16T10:48:18.220-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=4 version=6 committed_at=2026-11-16T16:48:18.220572762Z
+time=2026-11-16T10:48:18.420-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=5 version=7 committed_at=2026-11-16T16:48:18.420391954Z
+time=2026-11-16T10:48:18.608-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=6 version=8 committed_at=2026-11-16T16:48:18.608307027Z
+time=2026-11-16T10:48:18.819-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=7 version=9 committed_at=2026-11-16T16:48:18.819764419Z
+time=2026-11-16T10:48:19.020-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=8 version=10 committed_at=2026-11-16T16:48:19.020281698Z
+time=2026-11-16T10:48:19.220-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=9 version=11 committed_at=2026-11-16T16:48:19.220782524Z
+time=2026-11-16T10:48:19.420-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=10 version=12 committed_at=2026-11-16T16:48:19.420628396Z
+time=2026-11-16T10:48:19.620-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=11 version=13 committed_at=2026-11-16T16:48:19.620406969Z
+time=2026-11-16T10:48:19.820-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=12 version=14 committed_at=2026-11-16T16:48:19.820942016Z
+time=2026-11-16T10:48:20.020-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=13 version=15 committed_at=2026-11-16T16:48:20.020898504Z
+time=2026-11-16T10:48:20.219-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=14 version=16 committed_at=2026-11-16T16:48:20.219507544Z
+time=2026-11-16T10:48:20.419-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=15 version=17 committed_at=2026-11-16T16:48:20.419787174Z
+time=2026-11-16T10:48:20.620-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=16 version=18 committed_at=2026-11-16T16:48:20.620710609Z
+time=2026-11-16T10:48:20.819-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=17 version=19 committed_at=2026-11-16T16:48:20.819575617Z
+time=2026-11-16T10:48:21.019-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=18 version=20 committed_at=2026-11-16T16:48:21.019664095Z
+time=2026-11-16T10:48:21.218-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=19 version=21 committed_at=2026-11-16T16:48:21.218943525Z
+time=2026-11-16T10:48:21.419-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=20 version=22 committed_at=2026-11-16T16:48:21.419563812Z
+time=2026-11-16T10:48:21.620-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=21 version=23 committed_at=2026-11-16T16:48:21.62027129Z
+time=2026-11-16T10:48:21.820-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=22 version=24 committed_at=2026-11-16T16:48:21.820543355Z
+time=2026-11-16T10:48:22.020-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=23 version=25 committed_at=2026-11-16T16:48:22.02033861Z
+time=2026-11-16T10:48:22.219-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=24 version=26 committed_at=2026-11-16T16:48:22.219956794Z
+time=2026-11-16T10:48:22.420-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=25 version=27 committed_at=2026-11-16T16:48:22.42028688Z
+time=2026-11-16T10:48:22.619-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=26 version=28 committed_at=2026-11-16T16:48:22.61981259Z
+time=2026-11-16T10:48:22.820-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=27 version=29 committed_at=2026-11-16T16:48:22.820565803Z
+time=2026-11-16T10:48:23.020-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=28 version=30 committed_at=2026-11-16T16:48:23.020104648Z
+time=2026-11-16T10:48:23.220-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=29 version=31 committed_at=2026-11-16T16:48:23.220018771Z
+time=2026-11-16T10:48:23.407-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=30 version=32 committed_at=2026-11-16T16:48:23.407919066Z
+time=2026-11-16T10:48:23.607-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=31 version=33 committed_at=2026-11-16T16:48:23.607462515Z
+time=2026-11-16T10:48:23.820-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=32 version=34 committed_at=2026-11-16T16:48:23.820843107Z
+time=2026-11-16T10:48:24.020-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=33 version=35 committed_at=2026-11-16T16:48:24.020526539Z
+time=2026-11-16T10:48:24.220-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=34 version=36 committed_at=2026-11-16T16:48:24.220166663Z
+time=2026-11-16T10:48:24.407-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=35 version=37 committed_at=2026-11-16T16:48:24.407132981Z
+time=2026-11-16T10:48:24.620-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=36 version=38 committed_at=2026-11-16T16:48:24.620817493Z
+time=2026-11-16T10:48:24.820-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=37 version=39 committed_at=2026-11-16T16:48:24.820504644Z
+time=2026-11-16T10:48:25.020-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=38 version=40 committed_at=2026-11-16T16:48:25.020341854Z
+time=2026-11-16T10:48:25.220-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=39 version=41 committed_at=2026-11-16T16:48:25.220020669Z
+time=2026-11-16T10:48:25.420-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=40 version=42 committed_at=2026-11-16T16:48:25.420125575Z
+time=2026-11-16T10:48:25.607-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=41 version=43 committed_at=2026-11-16T16:48:25.607814499Z
+time=2026-11-16T10:48:25.820-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=42 version=44 committed_at=2026-11-16T16:48:25.820421409Z
+time=2026-11-16T10:48:26.019-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=43 version=45 committed_at=2026-11-16T16:48:26.01980518Z
+time=2026-11-16T10:48:26.218-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=44 version=46 committed_at=2026-11-16T16:48:26.218957772Z
+time=2026-11-16T10:48:26.418-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=45 version=47 committed_at=2026-11-16T16:48:26.418296924Z
+time=2026-11-16T10:48:26.607-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=46 version=48 committed_at=2026-11-16T16:48:26.60757283Z
+time=2026-11-16T10:48:26.819-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=47 version=49 committed_at=2026-11-16T16:48:26.819569579Z
+time=2026-11-16T10:48:27.019-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=48 version=50 committed_at=2026-11-16T16:48:27.019956995Z
+time=2026-11-16T10:48:27.220-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=49 version=51 committed_at=2026-11-16T16:48:27.220331148Z
+time=2026-11-16T10:48:27.420-06:00 level=INFO msg="simulated progress committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 simulation_step=50 version=52 committed_at=2026-11-16T16:48:27.420262693Z
+time=2026-11-16T10:48:27.420-06:00 level=INFO msg="simulated phase finished" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 steps=50
+time=2026-11-16T10:48:27.559-06:00 level=INFO msg="job change committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 status=processing version=53 committed_at=2026-11-16T16:48:27.55927353Z
+time=2026-11-16T10:48:27.562-06:00 level=INFO msg="job change committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 status=processing version=54 committed_at=2026-11-16T16:48:27.562699975Z
+time=2026-11-16T10:48:27.565-06:00 level=INFO msg="job change committed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 status=completed version=55 committed_at=2026-11-16T16:48:27.565970042Z
+time=2026-11-16T10:48:27.566-06:00 level=INFO msg="image job completed" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1
+time=2026-11-16T10:48:27.566-06:00 level=INFO msg="sse stream ended" job_id=d9065d38-73f4-4b7c-bce3-c6efd2935ea1 end_reason=terminal events_sent=55 heartbeats=1 db_reads=55 duration_ms=10174 active_streams=0 peak_active_streams=1
+time=2026-11-16T10:48:27.578-06:00 level=INFO msg="job created" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 image_id=01a1e542-91b7-7963-83b6-588002295210 status=queued version=1
+time=2026-11-16T10:48:27.579-06:00 level=INFO msg="sse stream started" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 version=1 status=queued active_streams=1 peak_active_streams=1
+time=2026-11-16T10:48:27.655-06:00 level=INFO msg="job change committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 status=processing version=2 committed_at=2026-11-16T16:48:27.655540459Z
+time=2026-11-16T10:48:27.655-06:00 level=INFO msg="image job started" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 image_id=01a1e542-91b7-7963-83b6-588002295210
+time=2026-11-16T10:48:27.655-06:00 level=INFO msg="simulated phase started" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 duration=10s interval=200ms
+time=2026-11-16T10:48:27.873-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=1 version=3 committed_at=2026-11-16T16:48:27.873289626Z
+time=2026-11-16T10:48:28.072-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=2 version=4 committed_at=2026-11-16T16:48:28.072512703Z
+time=2026-11-16T10:48:28.272-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=3 version=5 committed_at=2026-11-16T16:48:28.272385396Z
+time=2026-11-16T10:48:28.472-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=4 version=6 committed_at=2026-11-16T16:48:28.472895907Z
+time=2026-11-16T10:48:28.659-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=5 version=7 committed_at=2026-11-16T16:48:28.659924231Z
+time=2026-11-16T10:48:28.872-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=6 version=8 committed_at=2026-11-16T16:48:28.872298448Z
+time=2026-11-16T10:48:29.072-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=7 version=9 committed_at=2026-11-16T16:48:29.072723954Z
+time=2026-11-16T10:48:29.272-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=8 version=10 committed_at=2026-11-16T16:48:29.272220861Z
+time=2026-11-16T10:48:29.472-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=9 version=11 committed_at=2026-11-16T16:48:29.47279948Z
+time=2026-11-16T10:48:29.672-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=10 version=12 committed_at=2026-11-16T16:48:29.67249459Z
+time=2026-11-16T10:48:29.872-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=11 version=13 committed_at=2026-11-16T16:48:29.872828323Z
+time=2026-11-16T10:48:30.073-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=12 version=14 committed_at=2026-11-16T16:48:30.073087323Z
+time=2026-11-16T10:48:30.273-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=13 version=15 committed_at=2026-11-16T16:48:30.273098176Z
+time=2026-11-16T10:48:30.473-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=14 version=16 committed_at=2026-11-16T16:48:30.473013699Z
+time=2026-11-16T10:48:30.660-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=15 version=17 committed_at=2026-11-16T16:48:30.660517346Z
+time=2026-11-16T10:48:30.872-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=16 version=18 committed_at=2026-11-16T16:48:30.872380548Z
+time=2026-11-16T10:48:31.072-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=17 version=19 committed_at=2026-11-16T16:48:31.072248904Z
+time=2026-11-16T10:48:31.273-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=18 version=20 committed_at=2026-11-16T16:48:31.273134226Z
+time=2026-11-16T10:48:31.472-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=19 version=21 committed_at=2026-11-16T16:48:31.472809816Z
+time=2026-11-16T10:48:31.673-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=20 version=22 committed_at=2026-11-16T16:48:31.67332313Z
+time=2026-11-16T10:48:31.872-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=21 version=23 committed_at=2026-11-16T16:48:31.872756663Z
+time=2026-11-16T10:48:32.073-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=22 version=24 committed_at=2026-11-16T16:48:32.073270766Z
+time=2026-11-16T10:48:32.271-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=23 version=25 committed_at=2026-11-16T16:48:32.271819063Z
+time=2026-11-16T10:48:32.472-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=24 version=26 committed_at=2026-11-16T16:48:32.472058608Z
+time=2026-11-16T10:48:32.673-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=25 version=27 committed_at=2026-11-16T16:48:32.673173237Z
+time=2026-11-16T10:48:32.873-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=26 version=28 committed_at=2026-11-16T16:48:32.873969793Z
+time=2026-11-16T10:48:33.073-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=27 version=29 committed_at=2026-11-16T16:48:33.073428208Z
+time=2026-11-16T10:48:33.261-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=28 version=30 committed_at=2026-11-16T16:48:33.261775529Z
+time=2026-11-16T10:48:33.473-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=29 version=31 committed_at=2026-11-16T16:48:33.473346852Z
+time=2026-11-16T10:48:33.673-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=30 version=32 committed_at=2026-11-16T16:48:33.673044741Z
+time=2026-11-16T10:48:33.873-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=31 version=33 committed_at=2026-11-16T16:48:33.873727904Z
+time=2026-11-16T10:48:34.073-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=32 version=34 committed_at=2026-11-16T16:48:34.073871795Z
+time=2026-11-16T10:48:34.260-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=33 version=35 committed_at=2026-11-16T16:48:34.260157507Z
+time=2026-11-16T10:48:34.472-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=34 version=36 committed_at=2026-11-16T16:48:34.472170425Z
+time=2026-11-16T10:48:34.673-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=35 version=37 committed_at=2026-11-16T16:48:34.673033696Z
+time=2026-11-16T10:48:34.860-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=36 version=38 committed_at=2026-11-16T16:48:34.860223936Z
+time=2026-11-16T10:48:35.073-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=37 version=39 committed_at=2026-11-16T16:48:35.073716202Z
+time=2026-11-16T10:48:35.273-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=38 version=40 committed_at=2026-11-16T16:48:35.273750759Z
+time=2026-11-16T10:48:35.473-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=39 version=41 committed_at=2026-11-16T16:48:35.473437516Z
+time=2026-11-16T10:48:35.672-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=40 version=42 committed_at=2026-11-16T16:48:35.67226514Z
+time=2026-11-16T10:48:35.860-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=41 version=43 committed_at=2026-11-16T16:48:35.860763061Z
+time=2026-11-16T10:48:36.072-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=42 version=44 committed_at=2026-11-16T16:48:36.072599249Z
+time=2026-11-16T10:48:36.273-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=43 version=45 committed_at=2026-11-16T16:48:36.273410456Z
+time=2026-11-16T10:48:36.474-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=44 version=46 committed_at=2026-11-16T16:48:36.474031651Z
+time=2026-11-16T10:48:36.673-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=45 version=47 committed_at=2026-11-16T16:48:36.673182647Z
+time=2026-11-16T10:48:36.872-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=46 version=48 committed_at=2026-11-16T16:48:36.872520758Z
+time=2026-11-16T10:48:37.073-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=47 version=49 committed_at=2026-11-16T16:48:37.073031065Z
+time=2026-11-16T10:48:37.272-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=48 version=50 committed_at=2026-11-16T16:48:37.272371065Z
+time=2026-11-16T10:48:37.460-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=49 version=51 committed_at=2026-11-16T16:48:37.460042335Z
+time=2026-11-16T10:48:37.673-06:00 level=INFO msg="simulated progress committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 simulation_step=50 version=52 committed_at=2026-11-16T16:48:37.673750433Z
+time=2026-11-16T10:48:37.673-06:00 level=INFO msg="simulated phase finished" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 steps=50
+time=2026-11-16T10:48:37.800-06:00 level=INFO msg="job change committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 status=processing version=53 committed_at=2026-11-16T16:48:37.800182673Z
+time=2026-11-16T10:48:37.804-06:00 level=INFO msg="job change committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 status=processing version=54 committed_at=2026-11-16T16:48:37.804001448Z
+time=2026-11-16T10:48:37.810-06:00 level=INFO msg="job change committed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 status=completed version=55 committed_at=2026-11-16T16:48:37.810225071Z
+time=2026-11-16T10:48:37.810-06:00 level=INFO msg="image job completed" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64
+time=2026-11-16T10:48:37.812-06:00 level=INFO msg="sse stream ended" job_id=6cfced78-3d2f-4667-b8be-d59a46304b64 end_reason=terminal events_sent=55 heartbeats=1 db_reads=55 duration_ms=10233 active_streams=0 peak_active_streams=1
+time=2026-11-16T10:48:37.814-06:00 level=INFO msg="caught signal" signal=terminated
+time=2026-11-16T10:48:37.814-06:00 level=INFO msg="completing background tasks" addr=:4000
+time=2026-11-16T10:48:37.814-06:00 level=INFO msg="image worker stopped"
+time=2026-11-16T10:48:37.814-06:00 level=INFO msg="stopped server" addr=:4000

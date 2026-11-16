@@ -248,6 +248,9 @@ mode restarts observation of the *same* job without re-uploading:
 - **Long polling** — the server wakes the client on each version. Near-instant
   detection and full progress visibility, at a request count proportional to how
   often the job changes.
+- **Server-Sent Events** (Version 3) — one open `text/event-stream` response
+  carries the initial snapshot and every later committed version. See
+  [Version 3](#version-3--server-sent-events-assessment-3) below.
 
 See `REPORT.md` for the measured trade-off and a recommendation.
 
@@ -293,6 +296,123 @@ C2 (simulated 10 s @ 200 ms), and C3 (C2 + 200 ms client round-trip). Prediction
 were recorded in `experiments/predictions.md` before the runs. The headless Go
 client drives the same loops as the browser because no browser-automation stack
 is available in this environment.
+
+# Version 3 — Server-Sent Events (Assessment 3)
+
+## What Version 3 adds
+
+Version 3 keeps the Version 1 and Version 2 contracts unchanged: `POST
+/v1/images` still returns `202 Accepted` with a `Location`/`status_url`, jobs are
+durable in PostgreSQL, one in-process worker processes them, the four job states
+and three variants are unchanged, and short and long polling still work. The
+schema is unchanged — the existing `version`, `stage`, `variants_completed`, and
+`simulation_step` columns are all SSE needs, so there is no migration 6.
+
+The new observation mode is **one long-lived response** that carries complete
+job snapshots:
+
+```
+GET /v1/jobs/{id}/events
+```
+
+| Aspect | Behaviour |
+| :-- | :-- |
+| Unknown job | `404 Not Found` **before** stream headers are written |
+| Response headers | `Content-Type: text/event-stream; charset=utf-8`, `Cache-Control: no-cache` |
+| First frame | Current complete snapshot, sent immediately |
+| Later frames | One `event: job-update` per newly committed version |
+| Frame format | `event: job-update` + `data: {json}` + blank line, flushed per frame |
+| Idle keep-alive | `: heartbeat` comment about every 10 s; no `id:` field |
+| Terminal state | Terminal snapshot is the last frame, then the server ends the stream |
+| Stream end | Observation stops; the worker and the durable job continue |
+| Snapshot source | Every frame is a fresh read of PostgreSQL, never a cached delta |
+
+The browser does not use `Last-Event-ID` and the server never sends `id:`: the
+stream carries snapshots, not a replayable event history. A reconnect therefore
+receives the current snapshot, and any versions committed while disconnected are
+recovered by that snapshot rather than replayed one by one.
+
+```sh
+JOB_ID=...                                  # from the 202 response
+BASE=http://localhost:4000
+
+curl -N "$BASE/v1/jobs/$JOB_ID/events"
+# event: job-update
+# data: {"id":"...","status":"queued","version":1,...}
+#
+# event: job-update
+# data: {"id":"...","status":"processing","version":2,...}
+```
+
+### Server-side fan-out
+
+The handler reuses the Version 2 broadcaster and the same subscribe-before-read
+loop as long polling. A commit closes the job's signal channel, every waiting
+handler wakes, re-reads PostgreSQL, and writes the newer snapshot. Each observer
+holds its own registration; the terminal snapshot ends only that stream.
+
+The handler logs an `sse stream started` line with the requested version and an
+`sse stream ended` line with `end_reason`, `events_sent`, `heartbeats`,
+`db_reads`, `duration_ms`, `active_streams`, and `peak_active_streams`. The
+experiment joins these lines by job id.
+
+### Browser lifecycle
+
+`frontend/app.js` opens exactly one `EventSource` per observed job:
+
+- The initial snapshot and every later frame are validated with the same
+  `validateSnapshot` rules as polling bodies and rendered by the same job card.
+- **Stop observing** closes the stream and leaves the job running; **Resume
+  observation** opens one new `EventSource` on the same job.
+- A temporary error is shown as *Reconnecting to the job stream*, never as a job
+  failure. EventSource retries by itself while connecting; if the browser gives
+  up (for example a proxy returns `502` while the API restarts), the page opens
+  one fresh `EventSource` after a short delay and the initial snapshot brings the
+  UI up to date.
+- A terminal snapshot calls `EventSource.close()`; the server has already ended
+  the response.
+
+## Reproducing the Version 3 experiment
+
+```sh
+make db/migrations/up        # schema stays at version 5
+make experiment-v3           # 3 conditions × 2 methods × 3 reps = 18 runs
+make sse-smoke               # lifecycle checks against a running server
+```
+
+`make experiment-v3` runs `scripts/experiment-v3.sh`. It restarts the server per
+condition, alternates the method order between conditions, uploads the same
+generated fixture to an empty queue, and uses one observer per run:
+
+| Condition | Server flags | Workload |
+| :-- | :-- | :-- |
+| A — quiet interval | `-quiet-delay 30s` | Active for 30 s with no client-visible progress |
+| B — real progress | (none) | Real thumbnail, preview, display commits |
+| C — frequent updates | `-simulate-duration 10s -simulate-interval 200ms` | Labelled simulated phase, then real work |
+
+The script writes:
+
+| File | Contents |
+| :-- | :-- |
+| `experiments/v3/runs.csv` | 18 run-by-run rows, required measurements first |
+| `experiments/v3/summary.csv` | median and min–max per condition and method |
+| `experiments/v3/chart-gets.svg` | Graph 1: observation GETs per run |
+| `experiments/v3/chart-detection.svg` | Graph 2: completion-detection delay in ms |
+| `experiments/v3/chart-coverage.svg` | Supporting graph: version coverage |
+| `experiments/v3/raw/*.jsonl` | Per-run client event log, including SSE frames |
+| `experiments/v3/logs/*.log` | Per-condition server log with post-commit times |
+
+`make sse-smoke` (against a running server) writes `experiments/v3-lifecycle/`:
+13/13 lifecycle checks plus a server log with two observers on one job. It is
+kept outside `experiments/v3/` so re-running the experiment does not delete it.
+
+Detection delay is `client receipt of the terminal snapshot − server log time
+immediately after the terminal commit`, joined by job id. Processing duration is
+reported separately as worker `started_at` to terminal time. For SSE,
+`observation_gets` counts stream GETs only; job-update events and heartbeats are
+separate columns. Predictions were recorded in `experiments/v3-predictions.md`
+before the runs. The full analysis is in `REPORT-V3.md`, and the presentation
+script is `experiments/DEMO-V3.md`.
 
 # Week 1 Report
 

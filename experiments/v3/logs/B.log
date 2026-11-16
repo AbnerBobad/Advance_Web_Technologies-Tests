@@ -1,0 +1,67 @@
+time=2026-11-16T10:47:34.009-06:00 level=INFO msg="database connection pool established"
+time=2026-11-16T10:47:34.009-06:00 level=INFO msg="experimental controls" processing_delay=0s quiet_delay=0s simulate_duration=0s simulate_interval=2s worker_poll_interval=250ms
+time=2026-11-16T10:47:34.009-06:00 level=INFO msg="starting server" addr=:4000 env=development
+time=2026-11-16T10:47:34.334-06:00 level=INFO msg="job created" job_id=862a10bc-d8bf-4c82-8a67-ec9b98b463ea image_id=01a1e541-c1ad-7b15-b339-15f7a82db9ca status=queued version=1
+time=2026-11-16T10:47:34.336-06:00 level=INFO msg="sse stream started" job_id=862a10bc-d8bf-4c82-8a67-ec9b98b463ea version=1 status=queued active_streams=1 peak_active_streams=1
+time=2026-11-16T10:47:34.527-06:00 level=INFO msg="job change committed" job_id=862a10bc-d8bf-4c82-8a67-ec9b98b463ea status=processing version=2 committed_at=2026-11-16T16:47:34.527079273Z
+time=2026-11-16T10:47:34.527-06:00 level=INFO msg="image job started" job_id=862a10bc-d8bf-4c82-8a67-ec9b98b463ea image_id=01a1e541-c1ad-7b15-b339-15f7a82db9ca
+time=2026-11-16T10:47:34.649-06:00 level=INFO msg="job change committed" job_id=862a10bc-d8bf-4c82-8a67-ec9b98b463ea status=processing version=3 committed_at=2026-11-16T16:47:34.64981418Z
+time=2026-11-16T10:47:34.659-06:00 level=INFO msg="job change committed" job_id=862a10bc-d8bf-4c82-8a67-ec9b98b463ea status=processing version=4 committed_at=2026-11-16T16:47:34.659179393Z
+time=2026-11-16T10:47:34.665-06:00 level=INFO msg="job change committed" job_id=862a10bc-d8bf-4c82-8a67-ec9b98b463ea status=completed version=5 committed_at=2026-11-16T16:47:34.665010286Z
+time=2026-11-16T10:47:34.665-06:00 level=INFO msg="image job completed" job_id=862a10bc-d8bf-4c82-8a67-ec9b98b463ea
+time=2026-11-16T10:47:34.668-06:00 level=INFO msg="sse stream ended" job_id=862a10bc-d8bf-4c82-8a67-ec9b98b463ea end_reason=terminal events_sent=5 heartbeats=0 db_reads=5 duration_ms=332 active_streams=0 peak_active_streams=1
+time=2026-11-16T10:47:34.695-06:00 level=INFO msg="job created" job_id=78996ad5-54d5-4784-9be1-17f4c6caf363 image_id=01a1e541-c324-7098-b277-e38faab1ef40 status=queued version=1
+time=2026-11-16T10:47:34.697-06:00 level=INFO msg="sse stream started" job_id=78996ad5-54d5-4784-9be1-17f4c6caf363 version=1 status=queued active_streams=1 peak_active_streams=1
+time=2026-11-16T10:47:34.763-06:00 level=INFO msg="job change committed" job_id=78996ad5-54d5-4784-9be1-17f4c6caf363 status=processing version=2 committed_at=2026-11-16T16:47:34.763694136Z
+time=2026-11-16T10:47:34.763-06:00 level=INFO msg="image job started" job_id=78996ad5-54d5-4784-9be1-17f4c6caf363 image_id=01a1e541-c324-7098-b277-e38faab1ef40
+time=2026-11-16T10:47:34.876-06:00 level=INFO msg="job change committed" job_id=78996ad5-54d5-4784-9be1-17f4c6caf363 status=processing version=3 committed_at=2026-11-16T16:47:34.876127636Z
+time=2026-11-16T10:47:34.879-06:00 level=INFO msg="job change committed" job_id=78996ad5-54d5-4784-9be1-17f4c6caf363 status=processing version=4 committed_at=2026-11-16T16:47:34.879415882Z
+time=2026-11-16T10:47:34.885-06:00 level=INFO msg="job change committed" job_id=78996ad5-54d5-4784-9be1-17f4c6caf363 status=completed version=5 committed_at=2026-11-16T16:47:34.885207364Z
+time=2026-11-16T10:47:34.885-06:00 level=INFO msg="image job completed" job_id=78996ad5-54d5-4784-9be1-17f4c6caf363
+time=2026-11-16T10:47:34.888-06:00 level=INFO msg="sse stream ended" job_id=78996ad5-54d5-4784-9be1-17f4c6caf363 end_reason=terminal events_sent=5 heartbeats=0 db_reads=5 duration_ms=191 active_streams=0 peak_active_streams=1
+time=2026-11-16T10:47:34.909-06:00 level=INFO msg="job created" job_id=7cdbb13d-82d9-410f-9f91-b140c00c92a1 image_id=01a1e541-c3fa-772a-9a36-6775908ff865 status=queued version=1
+time=2026-11-16T10:47:34.910-06:00 level=INFO msg="sse stream started" job_id=7cdbb13d-82d9-410f-9f91-b140c00c92a1 version=1 status=queued active_streams=1 peak_active_streams=1
+time=2026-11-16T10:47:35.016-06:00 level=INFO msg="job change committed" job_id=7cdbb13d-82d9-410f-9f91-b140c00c92a1 status=processing version=2 committed_at=2026-11-16T16:47:35.016477111Z
+time=2026-11-16T10:47:35.016-06:00 level=INFO msg="image job started" job_id=7cdbb13d-82d9-410f-9f91-b140c00c92a1 image_id=01a1e541-c3fa-772a-9a36-6775908ff865
+time=2026-11-16T10:47:35.139-06:00 level=INFO msg="job change committed" job_id=7cdbb13d-82d9-410f-9f91-b140c00c92a1 status=processing version=3 committed_at=2026-11-16T16:47:35.139004659Z
+time=2026-11-16T10:47:35.142-06:00 level=INFO msg="job change committed" job_id=7cdbb13d-82d9-410f-9f91-b140c00c92a1 status=processing version=4 committed_at=2026-11-16T16:47:35.14227755Z
+time=2026-11-16T10:47:35.147-06:00 level=INFO msg="job change committed" job_id=7cdbb13d-82d9-410f-9f91-b140c00c92a1 status=completed version=5 committed_at=2026-11-16T16:47:35.147403451Z
+time=2026-11-16T10:47:35.147-06:00 level=INFO msg="image job completed" job_id=7cdbb13d-82d9-410f-9f91-b140c00c92a1
+time=2026-11-16T10:47:35.148-06:00 level=INFO msg="sse stream ended" job_id=7cdbb13d-82d9-410f-9f91-b140c00c92a1 end_reason=terminal events_sent=5 heartbeats=0 db_reads=5 duration_ms=238 active_streams=0 peak_active_streams=1
+time=2026-11-16T10:47:35.162-06:00 level=INFO msg="job created" job_id=f35cd5d3-1cbb-4895-95fe-c14216860e2e image_id=01a1e541-c4f7-7bc5-ac1d-8886c55cf8f7 status=queued version=1
+time=2026-11-16T10:47:35.266-06:00 level=INFO msg="job change committed" job_id=f35cd5d3-1cbb-4895-95fe-c14216860e2e status=processing version=2 committed_at=2026-11-16T16:47:35.266410646Z
+time=2026-11-16T10:47:35.266-06:00 level=INFO msg="image job started" job_id=f35cd5d3-1cbb-4895-95fe-c14216860e2e image_id=01a1e541-c4f7-7bc5-ac1d-8886c55cf8f7
+time=2026-11-16T10:47:35.268-06:00 level=INFO msg="long poll ended" job_id=f35cd5d3-1cbb-4895-95fe-c14216860e2e end_reason=changed wait_ms=104
+time=2026-11-16T10:47:35.387-06:00 level=INFO msg="job change committed" job_id=f35cd5d3-1cbb-4895-95fe-c14216860e2e status=processing version=3 committed_at=2026-11-16T16:47:35.387118296Z
+time=2026-11-16T10:47:35.387-06:00 level=INFO msg="long poll ended" job_id=f35cd5d3-1cbb-4895-95fe-c14216860e2e end_reason=changed wait_ms=118
+time=2026-11-16T10:47:35.390-06:00 level=INFO msg="job change committed" job_id=f35cd5d3-1cbb-4895-95fe-c14216860e2e status=processing version=4 committed_at=2026-11-16T16:47:35.390219527Z
+time=2026-11-16T10:47:35.390-06:00 level=INFO msg="long poll ended" job_id=f35cd5d3-1cbb-4895-95fe-c14216860e2e end_reason=changed wait_ms=2
+time=2026-11-16T10:47:35.393-06:00 level=INFO msg="job change committed" job_id=f35cd5d3-1cbb-4895-95fe-c14216860e2e status=completed version=5 committed_at=2026-11-16T16:47:35.393600424Z
+time=2026-11-16T10:47:35.393-06:00 level=INFO msg="image job completed" job_id=f35cd5d3-1cbb-4895-95fe-c14216860e2e
+time=2026-11-16T10:47:35.394-06:00 level=INFO msg="long poll ended" job_id=f35cd5d3-1cbb-4895-95fe-c14216860e2e end_reason=changed wait_ms=2
+time=2026-11-16T10:47:35.404-06:00 level=INFO msg="job created" job_id=bb7ed1ba-cca9-4a55-bcdf-e5d87e10fe86 image_id=01a1e541-c5e9-7833-a0ed-f01cafecdcd5 status=queued version=1
+time=2026-11-16T10:47:35.517-06:00 level=INFO msg="job change committed" job_id=bb7ed1ba-cca9-4a55-bcdf-e5d87e10fe86 status=processing version=2 committed_at=2026-11-16T16:47:35.517443959Z
+time=2026-11-16T10:47:35.517-06:00 level=INFO msg="image job started" job_id=bb7ed1ba-cca9-4a55-bcdf-e5d87e10fe86 image_id=01a1e541-c5e9-7833-a0ed-f01cafecdcd5
+time=2026-11-16T10:47:35.518-06:00 level=INFO msg="long poll ended" job_id=bb7ed1ba-cca9-4a55-bcdf-e5d87e10fe86 end_reason=changed wait_ms=113
+time=2026-11-16T10:47:35.636-06:00 level=INFO msg="job change committed" job_id=bb7ed1ba-cca9-4a55-bcdf-e5d87e10fe86 status=processing version=3 committed_at=2026-11-16T16:47:35.636130048Z
+time=2026-11-16T10:47:35.636-06:00 level=INFO msg="long poll ended" job_id=bb7ed1ba-cca9-4a55-bcdf-e5d87e10fe86 end_reason=changed wait_ms=116
+time=2026-11-16T10:47:35.639-06:00 level=INFO msg="job change committed" job_id=bb7ed1ba-cca9-4a55-bcdf-e5d87e10fe86 status=processing version=4 committed_at=2026-11-16T16:47:35.639727842Z
+time=2026-11-16T10:47:35.640-06:00 level=INFO msg="long poll ended" job_id=bb7ed1ba-cca9-4a55-bcdf-e5d87e10fe86 end_reason=changed wait_ms=3
+time=2026-11-16T10:47:35.642-06:00 level=INFO msg="job change committed" job_id=bb7ed1ba-cca9-4a55-bcdf-e5d87e10fe86 status=completed version=5 committed_at=2026-11-16T16:47:35.642966855Z
+time=2026-11-16T10:47:35.642-06:00 level=INFO msg="image job completed" job_id=bb7ed1ba-cca9-4a55-bcdf-e5d87e10fe86
+time=2026-11-16T10:47:35.643-06:00 level=INFO msg="long poll ended" job_id=bb7ed1ba-cca9-4a55-bcdf-e5d87e10fe86 end_reason=changed wait_ms=2
+time=2026-11-16T10:47:35.654-06:00 level=INFO msg="job created" job_id=dae3d872-2ed4-40b4-81f1-21e884e8367c image_id=01a1e541-c6e3-7a40-afca-5ca93c4f22c0 status=queued version=1
+time=2026-11-16T10:47:35.765-06:00 level=INFO msg="job change committed" job_id=dae3d872-2ed4-40b4-81f1-21e884e8367c status=processing version=2 committed_at=2026-11-16T16:47:35.765733241Z
+time=2026-11-16T10:47:35.765-06:00 level=INFO msg="image job started" job_id=dae3d872-2ed4-40b4-81f1-21e884e8367c image_id=01a1e541-c6e3-7a40-afca-5ca93c4f22c0
+time=2026-11-16T10:47:35.767-06:00 level=INFO msg="long poll ended" job_id=dae3d872-2ed4-40b4-81f1-21e884e8367c end_reason=changed wait_ms=109
+time=2026-11-16T10:47:35.880-06:00 level=INFO msg="job change committed" job_id=dae3d872-2ed4-40b4-81f1-21e884e8367c status=processing version=3 committed_at=2026-11-16T16:47:35.880789139Z
+time=2026-11-16T10:47:35.881-06:00 level=INFO msg="long poll ended" job_id=dae3d872-2ed4-40b4-81f1-21e884e8367c end_reason=changed wait_ms=112
+time=2026-11-16T10:47:35.884-06:00 level=INFO msg="job change committed" job_id=dae3d872-2ed4-40b4-81f1-21e884e8367c status=processing version=4 committed_at=2026-11-16T16:47:35.884586023Z
+time=2026-11-16T10:47:35.885-06:00 level=INFO msg="long poll ended" job_id=dae3d872-2ed4-40b4-81f1-21e884e8367c end_reason=changed wait_ms=3
+time=2026-11-16T10:47:35.887-06:00 level=INFO msg="job change committed" job_id=dae3d872-2ed4-40b4-81f1-21e884e8367c status=completed version=5 committed_at=2026-11-16T16:47:35.887821927Z
+time=2026-11-16T10:47:35.887-06:00 level=INFO msg="image job completed" job_id=dae3d872-2ed4-40b4-81f1-21e884e8367c
+time=2026-11-16T10:47:35.888-06:00 level=INFO msg="long poll ended" job_id=dae3d872-2ed4-40b4-81f1-21e884e8367c end_reason=changed wait_ms=2
+time=2026-11-16T10:47:35.889-06:00 level=INFO msg="caught signal" signal=terminated
+time=2026-11-16T10:47:35.889-06:00 level=INFO msg="completing background tasks" addr=:4000
+time=2026-11-16T10:47:35.889-06:00 level=INFO msg="image worker stopped"
+time=2026-11-16T10:47:35.889-06:00 level=INFO msg="stopped server" addr=:4000

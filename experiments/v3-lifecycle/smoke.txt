@@ -1,0 +1,21 @@
+creating test assets in /tmp/tmp.BpIdALCCt4
+test assets written to /tmp/tmp.BpIdALCCt4
+1) unknown job returns 404 before any stream
+  PASS  unknown job events -> 404
+2) stream headers and immediate initial snapshot
+  PASS  job created
+  PASS  Content-Type is text/event-stream
+  PASS  Cache-Control is no-cache
+  PASS  initial frame is a named job-update
+  PASS  initial snapshot carries a version
+  PASS  no SSE id field is emitted
+3) terminal snapshot, stream end, and two observers
+  PASS  observer 1 received the terminal snapshot
+  PASS  observer 2 received the terminal snapshot
+  PASS  observer 1 received multiple frames
+  PASS  observer 2 received multiple frames
+  PASS  observer streams ended
+4) disconnecting observation does not stop the worker
+  PASS  job still reaches completed after disconnect
+
+13 passed, 0 failed
