@@ -15,7 +15,7 @@ See **[REPORT.md](REPORT.md)** for the Version 2 measurement study, and
 **Presentations:**
 - **[Test 1 Presentation (Version 1)](https://docs.google.com/presentation/d/1eLQ8s6B0df1ZmZUbiw3TY5lHhxTKjM0rRNbhannq1d8/edit?usp=sharing)** - Short polling implementation and architecture
 - **[Test 2 Presentation (Version 2)](https://docs.google.com/presentation/d/19UaCpeSueERaJHl7dleqQxzZVnmdpip1ViWk5rGndM0/edit?usp=sharing)** - Long polling comparison and experiments
-- **[Test 3 Presentation (Version 3)](PRESENTATION-V3.md)** - SSE implementation and measured comparison
+- **[Test 3 Presentation (Version 3)](https://docs.google.com/presentation/d/1I4yWStkDHBOi0mE9Jz1X0ZoCi_0MolKHmsfzfSn0pAw/edit?usp=sharing)** - SSE implementation and measured comparison
 
 **[experiments/DEMO.md](experiments/DEMO.md)** for the walkthrough script.
 
