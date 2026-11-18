@@ -411,7 +411,8 @@ immediately after the terminal commit`, joined by job id. Processing duration is
 reported separately as worker `started_at` to terminal time. For SSE,
 `observation_gets` counts stream GETs only; job-update events and heartbeats are
 separate columns. Predictions were recorded in `experiments/v3-predictions.md`
-before the runs. The full analysis is in `REPORT-V3.md`, and the presentation
+before the runs. The full analysis is in `REPORT-V3.md`, the slide deck is
+`PRESENTATION-V3.md` (Marp, with speaker notes and timings), and the live demo
 script is `experiments/DEMO-V3.md`.
 
 # Week 1 Report

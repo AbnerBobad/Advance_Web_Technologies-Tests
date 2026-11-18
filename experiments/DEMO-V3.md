@@ -170,6 +170,7 @@ Read the numbers aloud from the actual summary table, condition by condition.
 | Lifecycle checks | `experiments/v3-lifecycle/` (13/13, two-observer log) |
 | Pre-run predictions | `experiments/v3-predictions.md` |
 | Report | `REPORT-V3.md` |
+| Slides | `PRESENTATION-V3.md` (Marp; speaker notes and timings included) |
 | Reproduction | `make experiment-v3`, `make sse-smoke` |
 
 ## Likely in-class questions
