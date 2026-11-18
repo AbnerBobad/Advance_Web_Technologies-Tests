@@ -70,7 +70,7 @@ make db/migrations/up
 ## Run
 
 ```sh
-make run/api
+make run
 # or directly:
 go run ./cmd/api
 
